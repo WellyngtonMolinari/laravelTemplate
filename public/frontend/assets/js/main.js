@@ -1,412 +1,249 @@
-(function ($) {
-	"use strict";
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
 
-/*=============================================
-	=    		 Preloader			      =
-=============================================*/
-function preloader() {
-	$('#preloader').delay(0).fadeOut();
-};
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
 
-$(window).on('load', function () {
-	preloader();
-	wowAnimation();
-});
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
 
+  /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = select('#navbar .scrollto', true)
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 200
+    navbarlinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active')
+      } else {
+        navbarlink.classList.remove('active')
+      }
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
 
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select('#header')
+    let offset = header.offsetHeight
 
-/*=============================================
-	=    		Mobile Menu			      =
-=============================================*/
-//SubMenu Dropdown Toggle
-if ($('.menu__area li.menu-item-has-children ul').length) {
-	$('.menu__area .navigation li.menu-item-has-children').append('<div class="dropdown__btn"><span class="fas fa-angle-down"></span></div>');
+    let elementPos = select(el).offsetTop
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: 'smooth'
+    })
+  }
 
-}
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
 
-//Mobile Nav Hide Show
-if ($('.mobile__menu').length) {
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
 
-	var mobileMenuContent = $('.menu__area .main__menu').html();
-	$('.mobile__menu .menu__box .menu__outer').append(mobileMenuContent);
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
 
-	//Dropdown Button
-	$('.mobile__menu li.menu-item-has-children .dropdown__btn').on('click', function () {
-		$(this).toggleClass('open');
-		$(this).prev('ul').slideToggle(500);
-	});
-	//Menu Toggle Btn
-	$('.mobile__nav__toggler').on('click', function () {
-		$('body').addClass('mobile-menu-visible');
-	});
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
 
-	//Menu Toggle Btn
-	$('.menu__backdrop, .mobile__menu .close__btn').on('click', function () {
-		$('body').removeClass('mobile-menu-visible');
-	});
-}
+  /**
+   * Scrool with ofset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(this.hash)) {
+      e.preventDefault()
 
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollto(this.hash)
+    }
+  }, true)
 
+  /**
+   * Scroll with ofset on page load with hash links in the url
+   */
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      if (select(window.location.hash)) {
+        scrollto(window.location.hash)
+      }
+    }
+  });
 
-/*=============================================
-	=     Menu sticky & Scroll to top      =
-=============================================*/
-$(window).on('scroll', function () {
-	var scroll = $(window).scrollTop();
-	if (scroll < 245) {
-		$("#sticky-header").removeClass("sticky-menu");
-		$('.scroll-to-target').removeClass('open');
+  /**
+   * Preloader
+   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
 
-	} else {
-		$("#sticky-header").addClass("sticky-menu");
-		$('.scroll-to-target').addClass('open');
-	}
-});
+  /**
+   * Initiate  glightbox 
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
 
+  /**
+   * Skills animation
+   */
+  let skilsContent = select('.skills-content');
+  if (skilsContent) {
+    new Waypoint({
+      element: skilsContent,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = select('.progress .progress-bar', true);
+        progress.forEach((el) => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%'
+        });
+      }
+    })
+  }
 
-/*=============================================
-	=    		 Scroll Up  	         =
-=============================================*/
-if ($('.scroll-to-target').length) {
-  $(".scroll-to-target").on('click', function () {
-    var target = $(this).attr('data-target');
-    // animate
-    $('html, body').animate({
-      scrollTop: $(target).offset().top
-    }, 1000);
+  /**
+   * Porfolio isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item'
+      });
+
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
 
   });
-}
+
+  /**
+   * Initiate portfolio lightbox 
+   */
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+  /**
+   * Portfolio details slider
+   */
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  });
 
 
-/*=============================================
-	=            Smooth Scroll              =
-=============================================*/
-$(function () {
-	$('a.scroll__link').on('click', function (event) {
-		var $anchor = $(this);
-		$('html, body').stop().animate({
-			scrollTop: $($anchor.attr('href')).offset().top - 40
-		}, 1000);
-		event.preventDefault();
-	});
-});
 
-
-/*=============================================
-	=    		 Tab Switcher		      =
-=============================================*/
-$(".mode__switcher, .switcher__tab__btn").on("click", function () {
-	$(".mode__switcher").toggleClass("active");
-	$('body').toggleClass("active-dark-mode");
-});
-
-
-/*=============================================
-	=    		Brand Active		      =
-=============================================*/
-$('.brand-active').slick({
-	dots: false,
-	infinite: true,
-	speed: 1000,
-	autoplay: true,
-	arrows: false,
-	slidesToShow: 6,
-	slidesToScroll: 2,
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 4,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-	]
-});
-
-
-/*=============================================
-	=    		Services Active		      =
-=============================================*/
-$('.services__active').slick({
-	dots: false,
-	infinite: true,
-	speed: 1000,
-	autoplay: false,
-	arrows: true,
-	slidesToShow: 4,
-	slidesToScroll: 1,
-	prevArrow: '<button class="slick-prev"><i class="far fa-long-arrow-left"></i></button>',
-	nextArrow: '<button class="slick-next"><i class="far fa-long-arrow-right"></i></button>',
-	appendArrows: ".services__arrow",
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: true,
-				arrows: false,
-			}
-		},
-	]
-});
-
-
-/*=============================================
-	=    		Portfolio Active		      =
-=============================================*/
-$('.portfolio__active').slick({
-	dots: false,
-	infinite: true,
-	speed: 1000,
-	autoplay: false,
-	arrows: true,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	prevArrow: '<button class="slick-prev"><i class="far fa-long-arrow-alt-left"></i></button>',
-	nextArrow: '<button class="slick-next"><i class="far fa-long-arrow-alt-right"></i></button>',
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-	]
-});
-$('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
-	$('.portfolio__active').slick('refresh');
-})
-
-
-/*=============================================
-	=         Testimonial Active          =
-=============================================*/
-$('.testimonial__active').slick({
-	dots: false,
-	infinite: true,
-	speed: 1000,
-	autoplay: false,
-	arrows: true,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	prevArrow: '<button class="slick-prev"><i class="far fa-long-arrow-left"></i></button>',
-	nextArrow: '<button class="slick-next"><i class="far fa-long-arrow-right"></i></button>',
-	appendArrows: ".testimonial__arrow",
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-	]
-});
-
-
-/*=============================================
-	=         Testimonial Active          =
-=============================================*/
-$('.testimonial__two__active').slick({
-	dots: false,
-	infinite: true,
-	speed: 1000,
-	autoplay: false,
-	arrows: true,
-	fade: true,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	prevArrow: '<button class="slick-prev"><i class="far fa-long-arrow-left"></i></button>',
-	nextArrow: '<button class="slick-next"><i class="far fa-long-arrow-right"></i></button>',
-	appendArrows: ".testimonial__arrow",
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-	]
-});
-
-
-/*=============================================
-	=    		Magnific Popup		      =
-=============================================*/
-$('.popup-image').magnificPopup({
-	type: 'image',
-	gallery: {
-		enabled: true
-	}
-});
-
-/* magnificPopup video view */
-$('.popup-video').magnificPopup({
-	type: 'iframe'
-});
-
-
-/*=============================================
-	=    		Isotope	Active  	      =
-=============================================*/
-$('.portfolio__inner__active').imagesLoaded(function () {
-	// init Isotope
-	var $grid = $('.portfolio__inner__active').isotope({
-		itemSelector: '.grid-item',
-		percentPosition: true,
-		transitionDuration: '0.6s',
-		masonry: {
-			columnWidth: 1,
-		}
-	});
-	// filter items on button click
-	$('.portfolio__inner__nav').on('click', 'button', function () {
-		var filterValue = $(this).attr('data-filter');
-		$grid.isotope({ filter: filterValue });
-	});
-
-});
-//for menu active class
-$('.portfolio__inner__nav button').on('click', function (event) {
-	$(this).siblings('.active').removeClass('active');
-	$(this).addClass('active');
-	event.preventDefault();
-});
-
-
-/*=============================================
-	=    		 Wow Active  	         =
-=============================================*/
-function wowAnimation() {
-	var wow = new WOW({
-		boxClass: 'wow',
-		animateClass: 'animated',
-		offset: 0,
-		mobile: false,
-		live: true
-	});
-	wow.init();
-}
-
-
-})(jQuery);
