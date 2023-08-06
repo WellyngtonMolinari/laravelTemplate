@@ -1,6 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 
+<!-- ======= Hero Section ======= -->
+@include('frontend.home_all.home_slide')
+<!-- End Hero -->
+
 <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients section-bg">
     <div class="container">
