@@ -18,7 +18,7 @@ style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}'); ba
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src="{{ $homeslide->home_slide  }}" class="img-fluid animated" alt="">
+            <img src="{{ $homeslide->home_slide  }}" class="img-fluid animated" alt="" style="max-width: 500px; max-height: 500px;">
           {{-- <img src="{{ asset('frontend/assets/img/brightsmile.png') }}" class="img-fluid animated" alt=""> --}}
         </div>
       </div>
