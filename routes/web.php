@@ -5,6 +5,7 @@ use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioCategoryController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
@@ -64,6 +65,21 @@ Route::controller(AboutController::class)->group(function () {
 
     Route::post('/update/multi/image', 'UpdateMultiImage')->name('update.multi.image');
    Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
+     
+});
+
+// Portfolio Category All Routes 
+Route::controller(PortfolioCategoryController::class)->group(function () {
+    Route::get('/all/portfolio/category', 'AllPortfolioCategory')->name('all.portfolio.category');
+    Route::get('/add/portfolio/category', 'AddPortfolioCategory')->name('add.portfolio.category');
+
+    Route::post('/store/portfolio/category', 'StorePortfolioCategory')->name('store.portfolio.category');
+
+    Route::get('/edit/portfolio/category/{id}', 'EditPortfolioCategory')->name('edit.portfolio.category');
+
+     Route::post('/update/portfolio/category/{id}', 'UpdatePortfolioCategory')->name('update.portfolio.category');
+
+     Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name('delete.portfolio.category');     
      
 });
 

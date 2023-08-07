@@ -1,46 +1,67 @@
-<section class="portfolio">
-    <div class="container">
-    <div class="row justify-content-center">
-    <div class="col-xl-6 col-lg-8">
-    <div class="section__title text-center">
-    <span class="sub-title">04 - Portfolio</span>
-    <h2 class="title">All creative work</h2>
-    </div>
-    </div>
-    </div>
-   
-    </div>
-    <div class="tab-content" id="portfolioTabContent">
-  
-  @php
+@php
 $portfolio = App\Models\Portfolio::latest()->get();
-  @endphp
+@endphp
      
-     
-    <div class="tab-pane show active" id="all" role="tabpanel" aria-labelledby="graphic-tab">
-    <div class="container">
-    <div class="row gx-0 justify-content-center">
-    <div class="col">
-    <div class="portfolio__active">
+<section id="portfolio" class="portfolio">
+  <div class="container" data-aos="fade-up">
 
-        @foreach($portfolio as $item)
-    <div class="portfolio__item">
-    <div class="portfolio__thumb">
-        <img src="{{ asset($item->portfolio_image) }}" alt="">
+    <div class="section-title">
+      <h2>Galeria</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-    <div class="portfolio__overlay__content">
-        <span>{{$item->portfolio_name}}</span>
-        <h4 class="title"><a href="{{ route('portfolio.details',$item->id)}}">{{$item->  portfolio_title}}</a></h4>
-        <a href="{{ route('portfolio.details',$item->id)}}" class="link">Case Study</a>
-    </div>
-    </div> 
-    @endforeach
 
-   
+    <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <li data-filter="*" class="filter-active">All</li>
+      <li data-filter=".filter-app">Cat 1</li>
+      <li data-filter=".filter-card">Cat 2</li>
+      <li data-filter=".filter-web">Cat 3</li>
+    </ul>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-1.jpeg') }}" class="img-fluid" alt=""></div>
+        <div class="portfolio-info">
+          <h4>App 1</h4>
+          <p>App</p>
+          <a href="{{ asset('frontend/assets/img/portfolio/sala1-1.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-2.jpeg') }}" class="img-fluid" alt=""></div>
+        <div class="portfolio-info">
+          <h4>Web 3</h4>
+          <p>Web</p>
+          <a href="{{ asset('frontend/assets/img/portfolio/sala1-2.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-3.jpeg') }}" class="img-fluid" alt=""></div>
+        <div class="portfolio-info">
+          <h4>App 2</h4>
+          <p>App</p>
+          <a href="{{ asset('frontend/assets/img/portfolio/sala1-3.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-4.jpeg') }}" class="img-fluid" alt=""></div>
+        <div class="portfolio-info">
+          <h4>Card 2</h4>
+          <p>Card</p>
+          <a href="{{ asset('frontend/assets/img/portfolio/sala1-4.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+      </div>
+
+      
+
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
+
+  </div>
+</section>

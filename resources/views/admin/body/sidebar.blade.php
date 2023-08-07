@@ -64,6 +64,17 @@
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="ri-account-circle-line"></i>
+            <span>Categoria portfolio</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('all.portfolio.category') }}">Ver Categoria portfolio</a></li>
+            <li><a href="{{ route('add.portfolio.category') }}">Adicionar Categoria portfolio</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="ri-account-circle-line"></i>
             <span>Categoria Blog</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
