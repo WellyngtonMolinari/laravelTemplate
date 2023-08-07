@@ -4,7 +4,8 @@ $homeslide = App\Models\HomeSlide::find(1);
 
 @endphp
 
-<section id="hero" class="d-flex align-items-center" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');">
+<section id="hero" class="d-flex align-items-center" 
+style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}'); background-size: cover;">
 
     <div class="container">
       <div class="row">
