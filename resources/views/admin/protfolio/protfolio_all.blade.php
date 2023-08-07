@@ -31,6 +31,7 @@
                         <tr>
                             <th>Sl</th>
                             <th>Portfolio Name</th>
+                            <th>Portfolio Category</th>
                             <th>Portfolio Title</th>
                             <th>Portfolio Image</th>
                             <th>Action</th>
@@ -44,6 +45,7 @@
                         <tr>
                             <td> {{ $i++}} </td>
                             <td> {{ $item->portfolio_name }} </td>
+                            <td> {{ $item->category }} </td>
                             <td> {{ $item->portfolio_title }} </td>
                             <td> <img src="{{ asset($item->portfolio_image) }}" style="width: 60px; height: 50px;"> </td>
                             

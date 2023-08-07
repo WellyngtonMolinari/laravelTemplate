@@ -129,6 +129,13 @@
 
         <!--tinymce js-->
         <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }} "></script>
+        <!-- Initialize TinyMCE -->
+        <script>
+        tinymce.init({
+            selector: '#elm1',
+            forced_root_block: false, // Disable automatic <p> tags
+        });
+        </script>
 
         <!-- init js -->
         <script src="{{ asset('backend/assets/js/pages/form-editor.init.js') }} "></script>

@@ -28,6 +28,7 @@ class PortfolioController extends Controller
             'portfolio_name' => 'required',
             'portfolio_title' => 'required',
             'portfolio_image' => 'required',
+            'category' => 'required',
 
         ],[
 
@@ -44,6 +45,7 @@ class PortfolioController extends Controller
             Portfolio::insert([
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
+                'category' => $request->category,
                 'portfolio_description' => $request->portfolio_description,
                 'portfolio_image' => $save_url,
                 'created_at' => Carbon::now(),
@@ -81,6 +83,7 @@ class PortfolioController extends Controller
             Portfolio::findOrFail($portfolio_id)->update([
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
+                'category' => $request->category,
                 'portfolio_description' => $request->portfolio_description,
                 'portfolio_image' => $save_url,
 
@@ -97,6 +100,7 @@ class PortfolioController extends Controller
             Portfolio::findOrFail($portfolio_id)->update([
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
+                'category' => $request->category,
                 'portfolio_description' => $request->portfolio_description,
                  
 

@@ -1,5 +1,8 @@
 @extends('admin.admin_master')
 @section('admin')
+@php
+$portfoliocategory = App\Models\PortfolioCategory::latest()->get();
+@endphp
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="page-content">
@@ -39,6 +42,19 @@
                 </div>
             </div>
             <!-- end row -->
+
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="category" class="form-label">Categoria</label>
+                    <select name="category" class="form-select" id="example-select">
+                        <option selected disabled>Selecionar Categoria</option>
+                        @foreach($portfoliocategory as $category)
+                            <option value="{{ $category->portfolio_category }}">{{ $category->portfolio_category }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            
 
  
 
