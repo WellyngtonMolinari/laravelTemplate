@@ -11,7 +11,7 @@ class PortfolioCategoryController extends Controller
     public function AllPortfolioCategory(){
 
         $portfoliocategory = PortfolioCategory::latest()->get();
-        return view('admin.portfolio_category.portfolio_category_all',compact('portfoliocategory'));
+        return view('admin.portfolio_category.portfolio_category_all', compact('portfoliocategory'));
 
     } // End Method
 

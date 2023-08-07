@@ -1,5 +1,6 @@
 @php
 $portfolio = App\Models\Portfolio::latest()->get();
+$portfoliocategory = App\Models\PortfolioCategory::latest()->get();
 @endphp
      
 <section id="portfolio" class="portfolio">
@@ -12,56 +13,27 @@ $portfolio = App\Models\Portfolio::latest()->get();
 
     <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
       <li data-filter="*" class="filter-active">All</li>
-      <li data-filter=".filter-app">Cat 1</li>
-      <li data-filter=".filter-card">Cat 2</li>
-      <li data-filter=".filter-web">Cat 3</li>
+      @foreach($portfoliocategory as $category)
+          <li data-filter=".filter-{{ Str::slug($category->portfolio_category) }}">{{ $category->portfolio_category }}</li>
+      @endforeach
     </ul>
 
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-1.jpeg') }}" class="img-fluid" alt=""></div>
-        <div class="portfolio-info">
-          <h4>App 1</h4>
-          <p>App</p>
-          <a href="{{ asset('frontend/assets/img/portfolio/sala1-1.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-2.jpeg') }}" class="img-fluid" alt=""></div>
-        <div class="portfolio-info">
-          <h4>Web 3</h4>
-          <p>Web</p>
-          <a href="{{ asset('frontend/assets/img/portfolio/sala1-2.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-3.jpeg') }}" class="img-fluid" alt=""></div>
-        <div class="portfolio-info">
-          <h4>App 2</h4>
-          <p>App</p>
-          <a href="{{ asset('frontend/assets/img/portfolio/sala1-3.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-        <div class="portfolio-img"><img src="{{ asset('frontend/assets/img/portfolio/sala1-4.jpeg') }}" class="img-fluid" alt=""></div>
-        <div class="portfolio-info">
-          <h4>Card 2</h4>
-          <p>Card</p>
-          <a href="{{ asset('frontend/assets/img/portfolio/sala1-4.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-        </div>
-      </div>
-
-      
-
-    </div>
+      @foreach($portfolio as $portfolio)
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ Str::slug($portfolio->category) }}">
+              <div class="portfolio-img">
+                  <img src="{{ $portfolio->portfolio_image }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                  <h4>{{ $portfolio->portfolio_title }}</h4>
+                  <p>{{ $portfolio->portfolio_description }}</p>
+                  <a href="{{ $portfolio->portfolio_image }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $portfolio->portfolio_title }}"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+          </div>
+      @endforeach
+  </div>
+  
 
   </div>
 </section>
