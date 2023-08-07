@@ -13,12 +13,8 @@ $route = Route::current()->getName();
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
-                <a class="nav-link scrollto" href="{{ route('home')}}">Início</a>
-            </li>
-            <li class="{{ request()->routeIs('home.about') ? 'active' : '' }}">
-                <a class="nav-link scrollto" href="{{ route('home.about')}}">Sobre</a>
-            </li>
+          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
           <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Galeria</a></li>
           <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
