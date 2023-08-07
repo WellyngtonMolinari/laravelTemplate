@@ -5,8 +5,8 @@
 @include('frontend.home_all.home_slide')
 <!-- End Hero -->
 
-<!-- ======= Clients Section ======= -->
-<section id="clients" class="clients section-bg">
+<!-- ======= Mershan Section ======= -->
+  <section id="clients" class="clients section-bg">
     <div class="container">
 
       <div class="row" data-aos="zoom-in">
@@ -22,11 +22,10 @@
         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
           <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
         </div>
+
         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
           <img src="{{ asset('frontend/assets/img/clients/listerine.png') }}" class="img-fluid" alt="">
         </div>
-
-        
 
         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
           <img src="{{ asset('frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
@@ -39,40 +38,11 @@
       </div>
 
     </div>
-  </section><!-- End Cliens Section -->
+  </section><!-- End Mershan Section -->
 
   <!-- ======= About Us Section ======= -->
-  <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Sobre nós</h2>
-      </div>
-
-      <div class="row content">
-        <div class="col-lg-6">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0">
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <a href="#" class="btn-learn-more">Saiba mais</a>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End About Us Section -->
+  @include('frontend.home_all.home_about')
+  <!-- End About Us Section -->
 
   <!-- ======= Why Us Section ======= -->
   <section id="why-us" class="why-us section-bg">
