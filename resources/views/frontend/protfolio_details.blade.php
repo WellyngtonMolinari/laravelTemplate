@@ -23,19 +23,23 @@
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                {{-- @foreach ($portfolio->portfolio_image as $image) --}}
-                        <div class="swiper-slide">
-                            <img src="{{ asset($portfolio->portfolio_image) }}">
-                        </div>
-                {{-- @endforeach --}}
-                     
-
-              </div>
-              <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                        <img src="{{ asset($portfolio->portfolio_image) }}">
+                    </div>
+        
+                    @foreach($portfolio->multiImages as $multiImage)
+                    <div class="swiper-slide">
+                      @php
+                          $resizedImage = Image::make(public_path($multiImage->multi_image))->resize(800, 600);
+                      @endphp
+                      <img src="{{ $resizedImage->encode('data-url') }}">
+                  </div>
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-          </div>
+        </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info">

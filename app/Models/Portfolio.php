@@ -9,6 +9,11 @@ class Portfolio extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function multiImages()
+    {
+        return $this->hasMany(MultiImage::class);
+    }
  
 }
  
