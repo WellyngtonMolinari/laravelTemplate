@@ -28,11 +28,10 @@ $allfooter = App\Models\Footer::find(1);
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Thais Raffaelli</h3>
             <p>
-              Rua Marechal Deodoro <br>
-              Jacutinga, MG<br>
-              Brasil <br><br>
-              <strong>Celular:</strong> (35) 9 9999-9999<br>
-              <strong>Email:</strong> info@example.com<br>
+              {{ $allfooter->adress }}<br>
+               
+              <strong>Celular:</strong> {{ $allfooter->number }}<br><br>
+              <strong>Email:</strong> {{ $allfooter->email }}<br>
             </p>
           </div>
 
@@ -62,11 +61,9 @@ $allfooter = App\Models\Footer::find(1);
             <h4>Nossas redes sociais</h4>
             <p>Acompanhe nossas publicações</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="{{ $allfooter->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="{{ $allfooter->twitter }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://api.whatsapp.com/send?phone={{ $allfooter->number }}" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
             </div>
           </div>
 
