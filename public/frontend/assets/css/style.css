@@ -2400,8 +2400,8 @@ section {
 }
 
 .post-img {
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 100vh; /* Adjust the height as needed */
+  object-fit: cover;
+  width: 110%;
+  height: 100vh;
+  box-sizing: border-box; /* Include padding and border in width/height */
 }

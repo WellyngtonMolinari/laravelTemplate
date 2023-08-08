@@ -28,9 +28,8 @@
 
             <article class="article">
 
-              <div class="post-img" style="background-image: url('{{ asset($blogs->blog_image) }}');">
-                 
-              </div>
+                <img src="{{ asset($blogs->blog_image) }}" alt="Blog Image" class="post-img">
+
 
               
               <h2 class="title">{{ $blogs->blog_title }}</h2>
@@ -221,13 +220,13 @@
 
             <div class="sidebar">
 
-              <div class="sidebar-item search-form">
+              {{-- <div class="sidebar-item search-form">
                 <h3 class="sidebar-title">Search</h3>
                 <form action="" class="mt-3">
                   <input type="text">
                   <button type="submit"><i class="bi bi-search"></i></button>
                 </form>
-              </div><!-- End sidebar search formn-->
+              </div><!-- End sidebar search formn--> --}}
 
               <div class="sidebar-item categories">
                 <h3 class="sidebar-title">Categories</h3>
@@ -241,15 +240,19 @@
               <div class="sidebar-item recent-posts">
                 <h3 class="sidebar-title">Recent Posts</h3>
 
-                @foreach($allblogs as $all )
-                <div class="post-item">
-                  <img src="{{ asset($all->blog_image) }}" class="flex-shrink-0">
-                  <div>
-                    <h4><a href="{{ route('blog.details',$all->id) }}">{{ $all->blog_title }}</a></h4>
-                    <span class="post-date"><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($all->created_at)->diffForHumans() }} </span>
-                  </div>
-                </div><!-- End recent post item-->
-                @endforeach
+                @foreach($allblogs as $index => $all)
+                    @if($index < 3) <!-- Set your desired limit -->
+                        <div class="post-item">
+                        <img src="{{ asset($all->blog_image) }}" class="flex-shrink-0">
+                        <div>
+                            <h4><a href="{{ route('blog.details', $all->id) }}">{{ $all->blog_title }}</a></h4>
+                            <span class="post-date"><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($all->created_at)->diffForHumans() }} </span>
+                        </div>
+                        </div><!-- End recent post item-->
+                    @else
+                        @break
+                    @endif
+                    @endforeach
 
                  
 
