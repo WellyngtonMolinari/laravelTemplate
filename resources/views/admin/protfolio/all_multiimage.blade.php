@@ -31,6 +31,7 @@
                         <tr>
                             <th>Sl</th>
                             <th>About Multi Images</th>
+                            <th>Portfolio</th>
                             <th>Action</th>
                             
                         </thead>
@@ -42,7 +43,7 @@
                         <tr>
                             <td> {{ $i++}} </td>
                             <td> <img src="{{ asset($item->multi_image) }}" style="width: 60px; height: 50px;"> </td>
-                            
+                            <td> {{ $item->portfolio->portfolio_name }} </td>
                             <td>
    <a href="{{ route('edit.multi.image',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 

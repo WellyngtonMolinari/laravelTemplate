@@ -9,5 +9,10 @@ class MultiImage extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function portfolio()
+    {
+        return $this->belongsTo(Portfolio::class);
+    }
 }
  
