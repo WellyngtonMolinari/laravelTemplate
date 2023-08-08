@@ -3,8 +3,8 @@
 @php
 $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
 @endphp
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
 <div class="page-content">
 <div class="container-fluid">
 
@@ -68,12 +68,12 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             </div>
             <!-- end row -->
 
-             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Image </label>
-                <div class="col-sm-10">
-           <input name="portfolio_image" class="form-control" type="file" id="image">
-                </div>
-            </div>
+<div class="row mb-3">
+<label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Image </label>
+    <div class="col-sm-10">
+        <input name="portfolio_image" class="form-control" type="file" id="image">
+    </div>
+</div>
             <!-- end row -->
 
 
@@ -84,11 +84,23 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
                 </div>
             </div>
             <!-- end row -->
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Protfolio Data">
-            </form>
+
              
+            <div class="row mb-3">
+                <label for="example-text-input2" class="col-sm-2 col-form-label">Multiple Images</label>
+                <div class="col-sm-10">
+                    <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple="">
+                    <div class="row" id="showImages">
+                        <img id="noImage" class="rounded avatar-lg" src="{{ url('upload/no_image.jpg') }}" alt="No Image" style="padding: 0;">
+                    </div>
+                </div>
+            </div>
+ 
+ 
+
            
-           
+            <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Protfolio Data">
+            </form>
         </div>
     </div>
 </div> <!-- end col -->
@@ -101,17 +113,31 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
 
 
 <script type="text/javascript">
-    
     $(document).ready(function(){
         $('#image').change(function(e){
             var reader = new FileReader();
             reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
+                $('#showImage').attr('src', e.target.result);
             }
             reader.readAsDataURL(e.target.files['0']);
         });
-    });
 
+        $('#multiImg').change(function(e){
+            $('#showImages').empty();
+            for (var i = 0; i < e.target.files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    var img = $('<img>').addClass('rounded avatar-lg').attr('src', e.target.result);
+                    $('#showImages').append(img);
+                }
+                reader.readAsDataURL(e.target.files[i]);
+            }
+        });
+    });
 </script>
+ 
+
+
+
 
 @endsection 

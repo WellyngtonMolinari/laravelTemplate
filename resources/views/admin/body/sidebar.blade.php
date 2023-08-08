@@ -39,23 +39,22 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('about.page') }}">Sobre Nós Editar</a></li>
-              <li><a href="{{ route('about.multi.image') }}">Multi Imagens</a></li>
-              <li><a href="{{ route('all.multi.image') }}">Todas Multi Imagens</a></li>
             </ul>
         </li>
 
 
- <li>
-    <a href="javascript: void(0);" class="has-arrow waves-effect">
-        <i class="ri-mail-send-line"></i>
-        <span>Sessão Portfólio</span>
-    </a>
-    <ul class="sub-menu" aria-expanded="false">
-        <li><a href="{{ route('all.portfolio') }}">Todos Portfólio</a></li>
-      <li><a href="{{ route('add.portfolio') }}">Adicionar Portfolio</a></li>
-       
-    </ul>
-</li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="ri-mail-send-line"></i>
+                <span>Sessão Portfólio</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('all.portfolio') }}">Todos Portfólio</a></li>
+                <li><a href="{{ route('add.portfolio') }}">Adicionar Portfolio</a></li>
+                 
+                <li><a href="{{ route('all.multi.image') }}">Todas Multi Imagens</a></li>
+            </ul>
+        </li>
 
                             
 
@@ -96,7 +95,7 @@
             </li>
 
 
-<li>
+            <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="ri-profile-line"></i>
                     <span>Rodapé Configuração</span>
@@ -115,9 +114,10 @@
                     <span>Mensagem de Contato</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('contact.message') }}">Mensagem de Contato</a></li>
+                    <li>
+                        <a href="{{ route('contact.message') }}">Mensagem de Contato</a>
+                    </li>
                      
-                    
                 </ul>
             </li>
                            

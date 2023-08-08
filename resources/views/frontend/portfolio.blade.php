@@ -1,6 +1,6 @@
 @extends('frontend.main_master')
 @section('main')
-
+{{-- you can exclude this file --}}
 @section('title')
 PortFolio | EasyLearning Website
 @endsection

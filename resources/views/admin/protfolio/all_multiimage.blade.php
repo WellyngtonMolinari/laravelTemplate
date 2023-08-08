@@ -30,7 +30,7 @@
                         <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>About Multi Image</th>
+                            <th>About Multi Images</th>
                             <th>Action</th>
                             
                         </thead>
