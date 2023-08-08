@@ -18,7 +18,6 @@ $route = Route::current()->getName();
           <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Galeria</a></li>
           <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
-          <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
           <!-- DROP DOWN SECTION TO ADD MORE CATEGORIES NAVBAR
             <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -38,6 +37,7 @@ $route = Route::current()->getName();
             </ul>
           </li>-->
           <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
+          <li><a class="nav-link scrollto" href="{{route('home.blog')}}">Blog</a></li>
           <li><a class="getstarted scrollto" href="#contact">Agendar consulta</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
