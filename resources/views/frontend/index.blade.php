@@ -465,35 +465,12 @@
         </div>
 
 
-        {{-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <input name="website" type="text" class="form-control" placeholder="Your Website">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Post Comment</button>
-                  </div>
-
-                </form>
-        </div> --}}
+         <!-- Contact Form -->
         <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+          <form method="post" action="{{ route('store.message') }}" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            @csrf
+            
             <div class="row gy-4">
 
               <div class="col-md-6">
@@ -509,24 +486,47 @@
               </div>
 
               <div class="col-md-12">
+                <input type="text" class="form-control" name="phone" placeholder="Your Phone" required>
+              </div>
+
+              <div class="col-md-12">
                 <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
               </div>
 
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                <button type="submit">Send Message</button>
-              </div>
+               
+                <button type="submit" class="btn">Enviar Mensagem!</button>
+              
 
             </div>
           </form>
+
         </div><!-- End Contact Form -->
 
       </div>
 
     </div>
   </section><!-- End Contact Section -->
+
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.php-email-form');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                alert('Your message has been sent successfully. Thank you!');
+                form.reset();
+            }
+        });
+    });
+</script>
 
 @endsection

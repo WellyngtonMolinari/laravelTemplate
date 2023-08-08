@@ -30,6 +30,7 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
 
+  
 
 </head>
 
@@ -63,6 +64,13 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+
+  
+  
+
+
+
+
   <!--=============== type JS  ===============-->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script>

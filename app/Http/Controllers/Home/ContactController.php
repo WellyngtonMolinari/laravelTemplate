@@ -10,33 +10,27 @@ use Illuminate\Support\Carbon;
 class ContactController extends Controller
 {
     public function Contact(){
-        return view('frontend.contact');
+        return view('frontend.index');
     } // end mehtod 
 
 
-    public function StoreMessage(Request $request){
-
-        Contact::insert([
-
+    public function StoreMessage(Request $request)
+    {
+        $insertResult = Contact::insert([
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
             'phone' => $request->phone,
             'message' => $request->message, 
             'created_at' => Carbon::now(),
-
         ]);
-
-         $notification = array(
-            'message' => 'Your Message Submited Successfully', 
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($notification);
-
-
-    } // end mehtod 
-
+    
+        if ($insertResult) {
+            return response()->json(['success' => true]);
+        } else {
+            return response()->json(['success' => false]);
+        }
+    }
 
     public function ContactMessage(){
 
