@@ -1,6 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+Home | Thais Raffaelli - Odontologia
+@endsection
+
 <!-- ======= Hero Section ======= -->
 @include('frontend.home_all.home_slide')
 <!-- End Hero -->

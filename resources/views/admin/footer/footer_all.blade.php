@@ -63,7 +63,7 @@
 
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Twitter</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Instagram</label>
                 <div class="col-sm-10">
                     <input name="twitter" class="form-control" type="text" value="{{ $allfooter->twitter }}"  id="example-text-input">
                 </div>

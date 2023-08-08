@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Blog | Thais Raffaelli
+Blog | Thais Raffaelli - Odontologia
 @endsection
 
 <main id="main">

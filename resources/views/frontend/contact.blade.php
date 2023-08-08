@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Contact | EasyLearning Website
+Contact | Thais Raffaelli - Odontologia
 @endsection
 
  <main>

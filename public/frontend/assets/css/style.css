@@ -125,6 +125,12 @@ h6 {
   opacity: 1;
 }
 
+/* Style for active navigation link */
+.nav-link.active {
+  color: #ff0000; /* You can use your preferred color */
+  /* ... other styles ... */
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/

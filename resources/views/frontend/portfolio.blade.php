@@ -2,7 +2,7 @@
 @section('main')
 {{-- you can exclude this file --}}
 @section('title')
-PortFolio | EasyLearning Website
+PortFolio | Thais Raffaelli - Odontologia
 @endsection
 
   <main>
