@@ -1955,11 +1955,6 @@ section {
   padding: 30px;
 }
 
-.blog-details .post-img {
-  margin: -30px -30px 20px -30px;
-  overflow: hidden;
-}
-
 .blog-details .title {
   color: var(--color-secondary);
   font-size: 28px;
@@ -1976,6 +1971,19 @@ section {
   font-size: 22px;
   margin-top: 30px;
   font-weight: bold;
+}
+
+.blog-details .post-img {
+  width: 100%;
+  height: auto; /* Allow height to adjust based on aspect ratio */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.blog-details .stretched-img {
+  width: 100%; /* Stretch the image horizontally to fill the container */
+  height: auto; /* Allow height to adjust based on aspect ratio */
 }
 
 .blog-details .content blockquote {
@@ -2399,9 +2407,5 @@ section {
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
 
-.post-img {
-  object-fit: cover;
-  width: 110%;
-  height: 100vh;
-  box-sizing: border-box; /* Include padding and border in width/height */
-}
+ 
+ 

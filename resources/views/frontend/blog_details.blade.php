@@ -19,18 +19,13 @@
 
     <!-- Blog-details Section - Blog Details Page -->
     <section id="blog-details" class="blog-details">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-5">
-
-          <div class="col-lg-8">
-
-            <article class="article">
-
-                <img src="{{ asset($blogs->blog_image) }}" alt="Blog Image" class="post-img">
-
-
+          <div class="row g-5">
+              <div class="col-lg-8">
+                  <article class="article">
+                      <div class="post-img">
+                          <img src="{{ asset($blogs->blog_image) }}" alt="Blog Image" class="img-fluid stretched-img">
+                      </div>
               
               <h2 class="title">{{ $blogs->blog_title }}</h2>
               
