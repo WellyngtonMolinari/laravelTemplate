@@ -32,7 +32,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Title </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Título de Portfólio </label>
                 <div class="col-sm-10">
                     <input name="portfolio_title" class="form-control" type="text" value="{{ $portfolio->portfolio_title }}" id="example-text-input">
 
@@ -57,7 +57,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
  
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Description </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Descrição do Portfólio </label>
                 <div class="col-sm-10">
       <textarea id="elm1" name="portfolio_description">
       {{ $portfolio->portfolio_description }}
@@ -67,7 +67,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
              <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem do Portfólio</label>
                 <div class="col-sm-10">
            <input name="portfolio_image" class="form-control" type="file" id="image">
                 </div>
@@ -82,7 +82,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
                 </div>
             </div>
             <!-- end row -->
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Protfolio Data">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Atualizar">
             </form>
              
            

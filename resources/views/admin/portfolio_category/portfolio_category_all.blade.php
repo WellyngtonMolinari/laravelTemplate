@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">portfolio Category All</h4>
+                                    <h4 class="mb-sm-0">Todas Categorias de Portfolio</h4>
 
                                      
 
@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">portfolio Category All Data </h4>
+                    <h4 class="card-title">Todas Categorias de Portfolio </h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

@@ -13,7 +13,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Protfolio Page </h4>
+            <h4 class="card-title">Adicionar Portfólio</h4>
             
             <form method="post" action="{{ route('store.protfolio') }}" enctype="multipart/form-data">
                 @csrf
@@ -21,7 +21,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
                
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Name</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome do Portfólio</label>
                 <div class="col-sm-10">
                     <input name="portfolio_name" class="form-control" type="text" id="example-text-input">
                     @error('portfolio_name')
@@ -32,7 +32,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Title </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Título de Portfólio </label>
                 <div class="col-sm-10">
                     <input name="portfolio_title" class="form-control" type="text" id="example-text-input">
 
@@ -59,7 +59,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
  
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Description </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Descrição do Portfólio </label>
                 <div class="col-sm-10">
       <textarea id="elm1" name="portfolio_description">
    
@@ -69,7 +69,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
 <div class="row mb-3">
-<label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Image </label>
+<label for="example-text-input" class="col-sm-2 col-form-label">Imagem do Portfólio </label>
     <div class="col-sm-10">
         <input name="portfolio_image" class="form-control" type="file" id="image">
     </div>
@@ -87,7 +87,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
 
              
             <div class="row mb-3">
-                <label for="example-text-input2" class="col-sm-2 col-form-label">Multiple Images</label>
+                <label for="example-text-input2" class="col-sm-2 col-form-label">Multiplas Imagens</label>
                 <div class="col-sm-10">
                     <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple="">
                     <div class="row" id="showImages">
@@ -99,7 +99,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
  
 
            
-            <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Protfolio Data">
+            <input type="submit" class="btn btn-info waves-effect waves-light" value="Inserir">
             </form>
         </div>
     </div>
