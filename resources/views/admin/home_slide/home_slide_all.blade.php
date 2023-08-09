@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Home Slide Page </h4>
+            <h4 class="card-title">Sessão Principal</h4>
             
             <form method="post" action="{{ route('update.slider') }}" enctype="multipart/form-data">
                 @csrf
@@ -18,7 +18,7 @@
                 <input type="hidden" name="id" value="{{ $homeslide->id }}">
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Título</label>
                 <div class="col-sm-10">
                     <input name="title" class="form-control" type="text" value="{{ $homeslide->title }}"  id="example-text-input">
                 </div>
@@ -26,7 +26,7 @@
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Short Title </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Sub-Título </label>
                 <div class="col-sm-10">
                     <input name="short_title" class="form-control" type="text" value="{{ $homeslide->short_title }}"  id="example-text-input">
                 </div>
@@ -35,7 +35,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Video URL </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Vídeo url</label>
                 <div class="col-sm-10">
                     <input name="video_url" class="form-control" type="text" value="{{ $homeslide->video_url }}"  id="example-text-input">
                 </div>
@@ -44,7 +44,7 @@
 
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Slider Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem flutuante </label>
                 <div class="col-sm-10">
        <input name="home_slide" class="form-control" type="file"  id="image">
                 </div>
@@ -58,7 +58,27 @@
                 </div>
             </div>
             <!-- end row -->
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Slide">
+
+            {{-- 
+                IMAGEM DE FUNDO
+
+                <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem flutuante </label>
+                <div class="col-sm-10">
+       <input name="home_slide" class="form-control" type="file"  id="image">
+                </div>
+            </div>
+            <!-- end row -->
+
+              <div class="row mb-3">
+                 <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
+                <div class="col-sm-10">
+  <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url( $homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
+                </div>
+            </div>
+            <!-- end row --> --}}
+
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Atualizar Sessão Principal">
             </form>
              
            

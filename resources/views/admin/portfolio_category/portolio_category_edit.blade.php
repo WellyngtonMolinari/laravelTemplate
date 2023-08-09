@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit portfolio Category Page </h4> <br><br>
+            <h4 class="card-title">Editar Categoria de Portfolio </h4> <br><br>
             
             <form method="post" action="{{ route('update.portfolio.category',$portfoliocategory->id) }}" >
                 @csrf
@@ -18,7 +18,7 @@
                
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">portfolio Category Name</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome da Categoria de Portfolio</label>
                 <div class="col-sm-10">
                     <input name="portfolio_category" class="form-control" type="text" value="{{ $portfoliocategory->portfolio_category }}" id="example-text-input">
                     @error('portfolio_category')
@@ -29,7 +29,7 @@
             <!-- end row -->
   
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update portfolio Category">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Inserir">
             </form>
              
            

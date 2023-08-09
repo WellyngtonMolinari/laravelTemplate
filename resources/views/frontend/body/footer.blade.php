@@ -26,7 +26,7 @@ $allfooter = App\Models\Footer::find(1);
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Thais Raffaelli</h3>
+            <h3>Site</h3>
             <p>
               {{ $allfooter->adress }}<br>
                
@@ -73,7 +73,7 @@ $allfooter = App\Models\Footer::find(1);
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; 2023. <strong><span>Thais Raffaelli - Odontologia</span></strong>. Todos os direitos reservados.
+        &copy; 2023. <strong><span>Site - Site</span></strong>. Todos os direitos reservados.
       </div>
       <div class="credits">
         Feito por <a href="">TechMind</a>

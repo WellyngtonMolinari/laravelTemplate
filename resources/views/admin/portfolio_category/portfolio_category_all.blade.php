@@ -29,9 +29,9 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
-                            <th>portfolio Category Name</th> 
-                            <th>Action</th>
+                            <th>ID</th>
+                            <th>Nome da Categoria de Portfolio</th> 
+                            <th>Ação</th>
                             
                         </thead>
 

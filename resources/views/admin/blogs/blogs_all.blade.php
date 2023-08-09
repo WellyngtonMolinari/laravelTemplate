@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Blogs All</h4>
+                                    <h4 class="mb-sm-0">Todos Blog Posts</h4>
 
                                      
 
@@ -23,18 +23,18 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Blogs All Data </h4>
+                    <h4 class="card-title">Todos Blog Posts </h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
-                            <th>Blog Category</th>
-                            <th>Blog Title</th>
+                            <th>ID</th>
+                            <th>Blog Categoria</th>
+                            <th>Blog Título</th>
                             <th>Blog Tags</th>
-                            <th>Blog Image</th>
-                            <th>Action</th>
+                            <th>Blog Imagem</th>
+                            <th>Ação</th>
                             
                         </thead>
 

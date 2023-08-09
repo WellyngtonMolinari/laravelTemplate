@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Footer Page </h4>
+            <h4 class="card-title">Rodapé </h4>
             
             <form method="post" action="{{ route('update.footer') }}" >
                 @csrf
@@ -18,7 +18,7 @@
                 <input type="hidden" name="id" value="{{ $allfooter->id }}">
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Number</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Número</label>
                 <div class="col-sm-10">
                     <input name="number" class="form-control" type="text" value="{{ $allfooter->number }}"  id="example-text-input">
                 </div>
@@ -28,7 +28,7 @@
           
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Short Description </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Descrição Curta </label>
                 <div class="col-sm-10">
                     <textarea required="" name="short_description"  class="form-control" rows="5">
                  {{ $allfooter->short_description }}
@@ -38,7 +38,7 @@
             <!-- end row -->
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Adress</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Endereço</label>
                 <div class="col-sm-10">
                     <input name="adress" class="form-control" type="text" value="{{ $allfooter->adress }}"  id="example-text-input">
                 </div>

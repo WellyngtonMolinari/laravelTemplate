@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Contact Message All</h4>
+                                    <h4 class="mb-sm-0">Mensagens de Contato</h4>
 
                                      
 
@@ -23,19 +23,19 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Contact Message All</h4>
+                    <h4 class="card-title">Mensagens de Contato</h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
-                            <th>Name</th>
-                            <th>Message</th>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Mensagem</th>
                             <th>Email</th>
-                            <th>Phone</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>Celular</th>
+                            <th>Data</th>
+                            <th>Ação</th>
                             
                         </thead>
 
