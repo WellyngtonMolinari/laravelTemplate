@@ -4,8 +4,12 @@ $homeslide = App\Models\HomeSlide::find(1);
 
 @endphp
 
-<section id="hero" class="d-flex align-items-center" 
-style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}'); background-size: cover;">
+<section id="hero" class="d-flex align-items-center">
+  <div class="carousel-container">
+    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
+    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
+    
+  </div>
 
     <div class="container">
       <div class="row">

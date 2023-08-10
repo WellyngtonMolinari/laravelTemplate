@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
     <head>
+
         
         <meta charset="utf-8" />
-        <title>Dashboard | Upcube - Admin & Dashboard Template</title>
+        <title>Painel de Controle | TechMind</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
@@ -20,7 +21,7 @@
 
         <!-- Responsive datatable examples -->
         <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />  
-
+        
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -31,6 +32,10 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" >
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
+        <script>
+            document.cookie = 'cookie2=value2; SameSite=None; Secure';
+        </script>
  
     </head>
 
@@ -156,6 +161,8 @@
 
  
 <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
+
+
 
     </body>
 
