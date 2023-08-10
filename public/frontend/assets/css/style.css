@@ -424,8 +424,7 @@ h6 {
   top: 0;
   left: 0;
   display: flex;
-  transition: transform 1s ease-in-out;
-  animation: slide 5s infinite; /* Optional: Auto-slide animation */
+  transition: transform 5s ease-in-out; /* Increase transition duration */
 }
 
 .carousel-slide {

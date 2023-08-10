@@ -249,12 +249,12 @@
   const carouselContainer = document.querySelector('.carousel-container');
   const slides = document.querySelectorAll('.carousel-slide');
   let currentSlide = 0;
-  
+
   function rotateCarousel() {
     currentSlide = (currentSlide + 1) % slides.length;
     const offset = -currentSlide * 100; // Slide width is 100%
     carouselContainer.style.transform = `translateX(${offset}%)`;
   }
-  
+
   setInterval(rotateCarousel, 5000); // Rotate every 5 seconds
   
