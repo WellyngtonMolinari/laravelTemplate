@@ -2,11 +2,13 @@
 :root {
   --color-default: #212529;
   --color-default-rgb: 33, 37, 41;
-  --color-background: #ffffff;
+  --color-background: #b4eaff;
   --color-background-rgb: 255, 255, 255;
-  --color-primary: #e84545;
+  --color-primary: #53ceff;
   --color-primary-rgb: 232, 69, 69;
   --color-secondary: #32353a;
+  --color-text: #a1c5ff;
+  --color-text-hover: #99c0ff;
   --color-secondary-rgb: 50, 53, 58;
   --color-box-background: #ffffff;
   --color-box-background-rgb: 255, 255, 255;
@@ -65,7 +67,7 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: rgba(246, 107, 174, 0.9);
+  background: var(--color-background);
 }
 
 #preloader:before {
@@ -73,7 +75,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid rgba(255, 192, 222, 0.9);
+  border: 6px solid var(--color-primary);
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -102,7 +104,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #47b2e4;
+  background: var(--color-text);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -116,7 +118,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6bc1e9;
+  background: var(--color-text-hover);
   color: #fff;
 }
 
@@ -138,7 +140,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background: #f66bae; /* Set your desired solid color here */
+  background: var(--color-primary); /* Set your desired solid color here */
 }
 
 #header .logo {
@@ -1688,7 +1690,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: rgba(246, 107, 174, 0.9);
+  background: var(--color-primary);
 }
 
 .italic-placeholder::placeholder {

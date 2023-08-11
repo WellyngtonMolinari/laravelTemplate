@@ -10,39 +10,41 @@ Home | Thais Raffaelli - Odontologia
 <!-- End Hero -->
 
 <!-- ======= Mershan Section ======= -->
-  <section id="clients" class="clients section-bg">
-    <div class="container">
-
-      <div class="row" data-aos="zoom-in">
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+<section id="clients" class="clients section-bg">
+  <div class="container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
           <img src="{{ asset('frontend/assets/img/clients/colgate.png') }}" class="img-fluid" alt="">
         </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <div class="swiper-slide">
           <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
         </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <div class="swiper-slide">
           <img src="{{ asset('frontend/assets/img/clients/listerine.png') }}" class="img-fluid" alt="">
         </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="{{ asset('frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
         </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="{{ asset('frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
         </div>
-
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+        </div>
+        
+        <!-- Add more swiper-slide elements for other logos -->
       </div>
-
     </div>
-  </section><!-- End Mershan Section -->
+  </div>
+</section>
+
 
   <!-- ======= About Us Section ======= -->
   @include('frontend.home_all.home_about')
@@ -531,6 +533,16 @@ Home | Thais Raffaelli - Odontologia
             }
         });
     });
+
+    var swiper = new Swiper('.swiper-container', {
+  slidesPerView: '4', // Adjust this based on your design preference
+  spaceBetween: 50, // Adjust spacing between logos
+  loop: true, // Enable looping
+  autoplay: {
+    delay: 2000, // Set autoplay delay (adjust as needed)
+  },
+});
 </script>
+
 
 @endsection
