@@ -7,8 +7,7 @@ $homeslide = App\Models\HomeSlide::find(1);
 <section id="hero" class="d-flex align-items-center">
   <div class="carousel-container">
     <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
-    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/banner.jpeg') }}');"></div>
-    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/service-banner.png') }}');"></div>
+    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
     <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
      
  

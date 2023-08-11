@@ -256,5 +256,7 @@
     carouselContainer.style.transform = `translateX(${offset}%)`;
   }
 
-  setInterval(rotateCarousel, 5000); // Rotate every 5 seconds
+  setInterval(rotateCarousel, 10000); // Rotate every 5 seconds
+
+  document.cookie = 'cookie2=value2; SameSite=None; Secure';
   
