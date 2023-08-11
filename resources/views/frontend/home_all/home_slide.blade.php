@@ -1,16 +1,14 @@
 
 @php
 $homeslide = App\Models\HomeSlide::find(1);
-
+$allCarousel = App\Models\Carousel::latest()->get();
 @endphp
 
 <section id="hero" class="d-flex align-items-center">
   <div class="carousel-container">
-    {{-- @foreach($allslides as $slide) --}}
-    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
-    <div class="carousel-slide" style="background-image: url('{{ asset('frontend/assets/img/hero.jpeg') }}');"></div>
-    {{-- <div class="carousel-slide" style="background-image: url('{{ asset($slide->slide_image) }}');"></div> --}}
-    {{-- @endforeach --}}
+    @foreach($allCarousel as $item)
+    <div class="carousel-slide" style="background-image: url('{{ asset($item->carousel_img) }}');"></div>
+    @endforeach
      
  
     

@@ -74,7 +74,7 @@ class HomeSliderController extends Controller
          foreach ($images as $image) {
              $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
      
-             Image::make($image)->resize(220, 220)->save('upload/carousel/' . $name_gen);
+             Image::make($image)->resize(1920, 1080)->save('upload/carousel/' . $name_gen);
              $save_url = 'upload/carousel/' . $name_gen;
      
              Carousel::create([
@@ -85,29 +85,29 @@ class HomeSliderController extends Controller
      }
 
 
-     public function StoreCarousel(Request $request)
-    {
-    $images = $request->file('carousel_img');
+    //  public function StoreCarousel(Request $request)
+    // {
+    // $images = $request->file('carousel_img');
 
-    foreach ($images as $image) {
-        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+    // foreach ($images as $image) {
+    //     $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-        Image::make($image)->resize(220, 220)->save('upload/carousel/' . $name_gen);
-        $save_url = 'upload/carousel/' . $name_gen;
+    //     Image::make($image)->resize(220, 220)->save('upload/carousel/' . $name_gen);
+    //     $save_url = 'upload/carousel/' . $name_gen;
 
-        Carousel::create([
-            'carousel_img' => $save_url,
-            'created_at' => now()
-        ]);
-    }
+    //     Carousel::create([
+    //         'carousel_img' => $save_url,
+    //         'created_at' => now()
+    //     ]);
+    // }
 
-        $notification = [
-            'message' => 'Carousel Images Inserted Successfully',
-            'alert-type' => 'success'
-        ];
+    //     $notification = [
+    //         'message' => 'Carousel Images Inserted Successfully',
+    //         'alert-type' => 'success'
+    //     ];
 
-        return redirect()->route('all.carousel')->with($notification);
-    }
+    //     return redirect()->route('all.carousel')->with($notification);
+    // }
 
 
 
@@ -135,7 +135,7 @@ class HomeSliderController extends Controller
             $image = $request->file('carousel_img');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-            Image::make($image)->resize(220, 220)->save('upload/carousel/' . $name_gen);
+            Image::make($image)->resize(1920, 1080)->save('upload/carousel/' . $name_gen);
             $save_url = 'upload/carousel/' . $name_gen;
 
             $carousel = Carousel::findOrFail($carousel_img_id); // Corrected variable name
@@ -156,7 +156,7 @@ class HomeSliderController extends Controller
 
      public function DeleteCarousel($id){
 
-        $carousel_img = Carousel::findOrFail($id);
+        $carousel = Carousel::findOrFail($id);
         $img = $carousel->carousel_img;
         unlink($img);
 

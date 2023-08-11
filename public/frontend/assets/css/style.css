@@ -138,11 +138,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-}
-
-#header.header-scrolled,
-#header.header-inner-pages {
-  background: rgba(246, 107, 174, 0.9);
+  background: #f66bae; /* Set your desired solid color here */
 }
 
 #header .logo {
