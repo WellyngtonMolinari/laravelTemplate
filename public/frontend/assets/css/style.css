@@ -7,8 +7,8 @@
   --color-primary: #53ceff;
   --color-primary-rgb: 232, 69, 69;
   --color-secondary: #32353a;
-  --color-text: #a1c5ff;
-  --color-text-hover: #99c0ff;
+  --color-up-button: #78acff;
+  --color-up-button-hover: #b3cfff;
   --color-secondary-rgb: 50, 53, 58;
   --color-box-background: #ffffff;
   --color-box-background-rgb: 255, 255, 255;
@@ -104,7 +104,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: var(--color-text);
+  background: var(--color-up-button);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -118,7 +118,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: var(--color-text-hover);
+  background: var(--color-up-button-hover);
   color: #fff;
 }
 

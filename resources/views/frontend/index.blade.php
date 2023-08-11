@@ -50,7 +50,7 @@ Home | Thais Raffaelli - Odontologia
   @include('frontend.home_all.home_about')
   <!-- End About Us Section -->
 
-  <!-- ======= Why Us Section ======= -->
+  {{-- <!-- ======= Why Us Section ======= -->
   <section id="why-us" class="why-us section-bg">
     <div class="container-fluid" data-aos="fade-up">
 
@@ -103,7 +103,7 @@ Home | Thais Raffaelli - Odontologia
       </div>
 
     </div>
-  </section><!-- End Why Us Section -->
+  </section><!-- End Why Us Section --> --}}
 
   <!-- ======= Skills Section ======= 
   <section id="skills" class="skills">
@@ -233,16 +233,16 @@ Home | Thais Raffaelli - Odontologia
 
       <div class="section-title">
         <h2>Conheça nossa equipe</h2>
-        <p>Equipe de dentistas e cirurgiões qualificados</p>
+        <p>Equipe</p>
       </div>
 
       <div class="row">
 
         <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
           <div class="member d-flex align-items-start">
-            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-1.jpeg') }}" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-6.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
-              <h4>Thais Raffaelli</h4>
+              <h4>Colaborador 1</h4>
               <span>Dentista</span>
               <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
               <div class="social">
@@ -257,7 +257,7 @@ Home | Thais Raffaelli - Odontologia
 
         <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="member d-flex align-items-start">
-            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-1.jpeg') }}" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-6.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
               <h4>Colaborador 2</h4>
               <span>Dentista</span>
@@ -271,47 +271,12 @@ Home | Thais Raffaelli - Odontologia
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-          <div class="member d-flex align-items-start">
-            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-1.jpeg') }}" class="img-fluid" alt=""></div>
-            <div class="member-info">
-              <h4>Colaborador 3</h4>
-              <span>Dentista</span>
-              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="member d-flex align-items-start">
-            <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-1.jpeg') }}" class="img-fluid" alt=""></div>
-            <div class="member-info">
-              <h4>Colaborador 4</h4>
-              <span>Dentista</span>
-              <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+ 
 
     </div>
   </section><!-- End Team Section -->
 
-  <!-- ======= Pricing Section ======= -->
+  {{-- <!-- ======= Pricing Section ======= -->
   <section id="pricing" class="pricing">
     <div class="container" data-aos="fade-up">
 
@@ -370,9 +335,9 @@ Home | Thais Raffaelli - Odontologia
       </div>
 
     </div>
-  </section><!-- End Pricing Section -->
+  </section><!-- End Pricing Section --> --}}
 
-  <!-- ======= Frequently Asked Questions Section ======= -->
+  {{-- <!-- ======= Frequently Asked Questions Section ======= -->
   <section id="faq" class="faq section-bg">
     <div class="container" data-aos="fade-up">
 
@@ -432,7 +397,7 @@ Home | Thais Raffaelli - Odontologia
       </div>
 
     </div>
-  </section><!-- End Frequently Asked Questions Section -->
+  </section><!-- End Frequently Asked Questions Section --> --}}
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
