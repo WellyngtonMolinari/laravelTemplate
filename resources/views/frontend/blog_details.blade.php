@@ -1,6 +1,11 @@
 @extends('frontend.main_master')
 @section('main')
-
+@php
+$homeslides = App\Models\HomeSlide::find(1);
+@endphp
+@section('title')
+Detalhes Blog | {{ $homeslides->title }}
+@endsection
 
 <main id="main">
 

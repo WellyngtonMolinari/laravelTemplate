@@ -1,8 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
-
+@php
+$homeslides = App\Models\HomeSlide::find(1);
+@endphp
 @section('title')
-Contact | Thais Raffaelli - Odontologia
+Contato | {{ $homeslides->title }}
 @endsection
 
  <main>

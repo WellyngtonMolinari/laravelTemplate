@@ -52,6 +52,7 @@ Route::controller(HomeSliderController::class)->group(function () {
    Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
 
    Route::get('/all/carousel', 'AllCarousel')->name('all.carousel');
+   Route::get('/add/carousel', 'AddCarousel')->name('add.carousel');
    Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
 
    Route::post('/update/carousel', 'UpdateCarousel')->name('update.carousel');

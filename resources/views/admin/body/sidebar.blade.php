@@ -28,6 +28,7 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('home.slide') }}">Título do Site</a></li>
                 <li><a href="{{ route('all.carousel') }}">Todos Carrossel</a></li>
+                <li><a href="{{ route('add.carousel') }}">Adicionar Carrossel</a></li>
               
             </ul>
         </li>

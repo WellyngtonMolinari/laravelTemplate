@@ -85,29 +85,29 @@ class HomeSliderController extends Controller
      }
 
 
-    //  public function StoreCarousel(Request $request)
-    // {
-    // $images = $request->file('carousel_img');
+     public function StoreCarousel(Request $request)
+    {
+    $images = $request->file('carousel_img');
 
-    // foreach ($images as $image) {
-    //     $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+    foreach ($images as $image) {
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-    //     Image::make($image)->resize(220, 220)->save('upload/carousel/' . $name_gen);
-    //     $save_url = 'upload/carousel/' . $name_gen;
+        Image::make($image)->resize(1920, 1080)->save('upload/carousel/' . $name_gen);
+        $save_url = 'upload/carousel/' . $name_gen;
 
-    //     Carousel::create([
-    //         'carousel_img' => $save_url,
-    //         'created_at' => now()
-    //     ]);
-    // }
+        Carousel::create([
+            'carousel_img' => $save_url,
+            'created_at' => now()
+        ]);
+    }
 
-    //     $notification = [
-    //         'message' => 'Carousel Images Inserted Successfully',
-    //         'alert-type' => 'success'
-    //     ];
+        $notification = [
+            'message' => 'Carousel Images Inserted Successfully',
+            'alert-type' => 'success'
+        ];
 
-    //     return redirect()->route('all.carousel')->with($notification);
-    // }
+        return redirect()->route('all.carousel')->with($notification);
+    }
 
 
 
@@ -115,6 +115,13 @@ class HomeSliderController extends Controller
 
         $allCarousel = Carousel::all();
         return view('admin.home_slide.all_carousel',compact('allCarousel'));
+
+     }// End Method 
+
+     public function AddCarousel(){
+
+        $allCarousel = Carousel::all();
+        return view('admin.home_slide.add_carousel',compact('allCarousel'));
 
      }// End Method 
 

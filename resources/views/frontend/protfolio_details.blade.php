@@ -1,6 +1,11 @@
 @extends('frontend.main_master')
 @section('main')
-
+@php
+$homeslides = App\Models\HomeSlide::find(1);
+@endphp
+@section('title')
+Galeria | {{ $homeslides->title }}
+@endsection
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->

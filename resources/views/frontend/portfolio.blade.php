@@ -1,8 +1,11 @@
 @extends('frontend.main_master')
 @section('main')
 {{-- you can exclude this file --}}
+@php
+$homeslides = App\Models\HomeSlide::find(1);
+@endphp
 @section('title')
-PortFolio | Thais Raffaelli - Odontologia
+Galeria | {{ $homeslides->title }}
 @endsection
 
   <main>
