@@ -191,32 +191,32 @@ Home | {{ $homeslides->title }}
       <div class="row">
         <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <img src="{{ asset('frontend/assets/img/service-icon-1.png') }}" alt="Image description">
-            <h4><a href="">Aparelhos</a></h4>
+            <img src="{{ asset('frontend/assets/img/services/briefcase.png') }}" alt="Image description">
+            <h4><a href="">Serviço 1</a></h4>
             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
           </div>
         </div>
 
         <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <img src="{{ asset('frontend/assets/img/service-icon-2.png') }}" alt="Image description">
-            <h4><a href="">Aparelhos</a></h4>
+            <img src="{{ asset('frontend/assets/img/services/diagram.png') }}" alt="Image description">
+            <h4><a href="">Serviço 2</a></h4>
             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
           </div>
         </div>
 
         <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <img src="{{ asset('frontend/assets/img/service-icon-3.png') }}" alt="Image description">
-            <h4><a href="">Aparelhos</a></h4>
+            <img src="{{ asset('frontend/assets/img/services/handshake.png') }}" alt="Image description">
+            <h4><a href="">Serviços 3</a></h4>
             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
           </div>
         </div>
 
         <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <img src="{{ asset('frontend/assets/img/service-icon-4.png') }}" alt="Image description">
-            <h4><a href="">Aparelhos</a></h4>
+            <img src="{{ asset('frontend/assets/img/services/lamp.png') }}" alt="Image description">
+            <h4><a href="">Serviços 4</a></h4>
             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
           </div>
         </div>
