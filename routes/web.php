@@ -48,6 +48,14 @@ Route::controller(AdminController::class)->group(function () {
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
    Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
+
+   Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
+
+   Route::get('/all/carousel', 'AllCarousel')->name('all.carousel');
+   Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
+
+   Route::post('/update/carousel', 'UpdateCarousel')->name('update.carousel');
+  Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
      
 });
 

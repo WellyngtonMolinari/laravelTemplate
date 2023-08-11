@@ -59,24 +59,15 @@
             </div>
             <!-- end row -->
 
-            {{-- 
-                IMAGEM DE FUNDO
-
-                <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem flutuante </label>
+            <div class="row mb-3">
+                <label for="example-text-input2" class="col-sm-2 col-form-label">Carousel</label>
                 <div class="col-sm-10">
-       <input name="home_slide" class="form-control" type="file"  id="image">
+                    <input type="file" name="carousel_img[]" class="form-control" id="carousel" multiple="">
+                    <div class="row" id="showImages">
+                        <img id="noImage" class="rounded avatar-lg" src="{{ url('upload/no_image.jpg') }}" alt="No Image" style="padding: 0;">
+                    </div>
                 </div>
             </div>
-            <!-- end row -->
-
-              <div class="row mb-3">
-                 <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
-                <div class="col-sm-10">
-  <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url( $homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
-                </div>
-            </div>
-            <!-- end row --> --}}
 
 <input type="submit" class="btn btn-info waves-effect waves-light" value="Atualizar Sessão Principal">
             </form>
@@ -104,8 +95,23 @@
             }
             reader.readAsDataURL(e.target.files['0']);
         });
+
+        $('#carousel').change(function(e){
+            $('#showImages').empty();
+            for (var i = 0; i < e.target.files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    var img = $('<img>').addClass('rounded avatar-lg').attr('src', e.target.result);
+                    $('#showImages').append(img);
+                }
+                reader.readAsDataURL(e.target.files[i]);
+            }
+        });
     });
 
 </script>
+
+
+        
 
 @endsection 
