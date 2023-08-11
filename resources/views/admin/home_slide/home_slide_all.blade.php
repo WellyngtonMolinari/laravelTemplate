@@ -44,9 +44,19 @@
 
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem flutuante </label>
+                <label for="imageSelect" class="col-sm-2 col-form-label">Imagem flutuante (transparente)</label>
                 <div class="col-sm-10">
-       <input name="home_slide" class="form-control" type="file"  id="image">
+                    <select name="home_slide" class="form-control" id="imageSelect">
+                        <option value="">Não adicionar</option>
+                        <option value="add_image">Adicionar imagem</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row mb-3" id="imageInputContainer" style="display: none;">
+                <label for="imageInput" class="col-sm-2 col-form-label">Imagem flutuante</label>
+                <div class="col-sm-10">
+                    <input name="home_slide" class="form-control" type="file" id="imageInput">
                 </div>
             </div>
             <!-- end row -->
@@ -88,12 +98,13 @@
 <script type="text/javascript">
     
     $(document).ready(function(){
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
+        $('#imageSelect').change(function(){
+            var selectedOption = $(this).val();
+            if (selectedOption === 'add_image') {
+                $('#imageInputContainer').show();
+            } else {
+                $('#imageInputContainer').hide();
             }
-            reader.readAsDataURL(e.target.files['0']);
         });
 
         $('#carousel').change(function(e){

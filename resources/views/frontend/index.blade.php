@@ -26,21 +26,40 @@ Home | {{ $homeslides->title }}
           <img src="{{ asset('frontend/assets/img/clients/listerine.png') }}" class="img-fluid" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('frontend/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('frontend/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('frontend/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{{ asset('frontend/assets/img/clients/oralb.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('frontend/assets/img/clients/fiat.png') }}" class="img-fluid" alt="">
         </div>
-        
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/honda.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/hyunday.png') }}" class="img-fluid" alt="">
+        </div>
+   
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/toyota.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/volkswagen.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/chevrolet.png') }}" class="img-fluid" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{{ asset('frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
+        </div>
+
         <!-- Add more swiper-slide elements for other logos -->
       </div>
     </div>

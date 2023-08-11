@@ -22,24 +22,48 @@ class HomeSliderController extends Controller
 
 
      public function UpdateSlider(Request $request)
-     {
-         $slide_id = $request->id;
-     
-         if ($request->file('home_slide')) {
-             $image = $request->file('home_slide');
-             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-     
-             Image::make($image)->resize(636, 852)->save('upload/home_slide/' . $name_gen);
-             $save_url = 'upload/home_slide/' . $name_gen;
-     
-             HomeSlide::findOrFail($slide_id)->update([
-                 'title' => $request->title,
-                 'short_title' => $request->short_title,
-                 'video_url' => $request->video_url,
-                 'home_slide' => $save_url,
-             ]);
-     
-                $carouselImages = $request->file('carousel_img');
+    {
+        $slide_id = $request->id;
+
+        // Check if "Não adicionar" is selected
+        if ($request->home_slide === 'no_image') {
+            // Unlink the previous image if it exists
+            $homeslide = HomeSlide::findOrFail($slide_id);
+            if (!empty($homeslide->home_slide)) {
+                unlink(public_path($homeslide->home_slide));
+            }
+
+            // Update the database with a placeholder value (e.g., "nothing")
+            $homeslide->update([
+                'home_slide' => 'nothing', // Update this value as needed
+                'title' => $request->title,
+                'short_title' => $request->short_title,
+                'video_url' => $request->video_url,
+            ]);
+
+            $notification = [
+                'message' => 'Home Slide Updated without Image Successfully',
+                'alert-type' => 'success',
+            ];
+        } else {
+            if ($request->file('home_slide')) {
+                $image = $request->file('home_slide');
+                $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+                Image::make($image)->resize(636, 852)->save('upload/home_slide/' . $name_gen);
+                $save_url = 'upload/home_slide/' . $name_gen;
+            } else {
+                $save_url = null; // Set this to null if "Não adicionar" is not selected
+            }
+
+            HomeSlide::findOrFail($slide_id)->update([
+                'title' => $request->title,
+                'short_title' => $request->short_title,
+                'video_url' => $request->video_url,
+                'home_slide' => $save_url,
+            ]);
+
+            $carouselImages = $request->file('carousel_img');
             if ($carouselImages) {
                 $this->storeCarouselImages($carouselImages);
             }
@@ -48,22 +72,11 @@ class HomeSliderController extends Controller
                 'message' => 'Home Slide Updated with Image and Carousel Successfully',
                 'alert-type' => 'success',
             ];
+        }
 
-         } else {
-             HomeSlide::findOrFail($slide_id)->update([
-                 'title' => $request->title,
-                 'short_title' => $request->short_title,
-                 'video_url' => $request->video_url,
-             ]);
-     
-             $notification = [
-                 'message' => 'Home Slide Updated without Image Successfully',
-                 'alert-type' => 'success',
-             ];
-         }
-     
-         return redirect()->back()->with($notification);
-     }
+        return redirect()->back()->with($notification);
+    }
+
      
      private function storeCarouselImages($images)
      {
