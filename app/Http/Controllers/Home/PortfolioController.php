@@ -26,41 +26,47 @@ class PortfolioController extends Controller
 
     public function StorePortfolio(Request $request)
     {
-    // Store portfolio data
-    $portfolio = Portfolio::create([
-        'portfolio_name' => $request->input('portfolio_name'),
-        'portfolio_title' => $request->input('portfolio_title'),
-        'category' => $request->input('category'),
-        'portfolio_description' => $request->input('portfolio_description'),
-        'portfolio_image' => $request->file('portfolio_image') ? $this->uploadImage($request->file('portfolio_image')) : null,
-    ]);
-
-    // Store multiple images
-    $multiImages = $request->file('multi_img');
-    foreach ($multiImages as $multiImage) {
-        $multiImageName = $this->uploadImage($multiImage, 'upload/multi/');
-        MultiImage::create([
-            'portfolio_id' => $portfolio->id,
-            'multi_image' => $multiImageName,
-            'created_at' => now(),
+        // Store portfolio data
+        $portfolio = Portfolio::create([
+            'portfolio_name' => $request->input('portfolio_name'),
+            'portfolio_title' => $request->input('portfolio_title'),
+            'category' => $request->input('category'),
+            'portfolio_description' => $request->input('portfolio_description'),
+            'portfolio_image' => $request->file('portfolio_image')
+                ? $this->uploadAndResizeImage($request->file('portfolio_image'), 'upload/portfolio/')
+                : null,
         ]);
+
+        // Store multiple images
+        $multiImages = $request->file('multi_img');
+        foreach ($multiImages as $multiImage) {
+            $multiImageName = $this->uploadAndResizeImage($multiImage, 'upload/multi/');
+            MultiImage::create([
+                'portfolio_id' => $portfolio->id,
+                'multi_image' => $multiImageName,
+                'created_at' => now(),
+            ]);
+        }
+
+        $notification = [
+            'message' => 'Portfolio and Multi Images Inserted Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->route('all.portfolio')->with($notification);
     }
 
-    $notification = [
-        'message' => 'Portfolio and Multi Images Inserted Successfully',
-        'alert-type' => 'success'
-    ];
-
-    return redirect()->route('all.portfolio')->with($notification);
-    }
-
-    private function uploadImage($image, $folder = 'upload/')
+    // New function for uploading and resizing the image
+    private function uploadAndResizeImage($image, $folder = 'upload/')
     {
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->save($folder . $name_gen);
-        return $folder . $name_gen;
+        
+        // Resize the image to 800x800
+        $resizedImage = Image::make($image)->fit(800, 800);
+        $resizedImage->save($folder . 'resized_' . $name_gen);
+        
+        return $folder . 'resized_' . $name_gen;
     }
-
 
 
     public function EditPortfolio($id){
@@ -70,7 +76,7 @@ class PortfolioController extends Controller
     }// End Method
 
 
-   public function UpdatePortfolio(Request $request){
+    public function UpdatePortfolio(Request $request){
 
         $portfolio_id = $request->id;
 
@@ -78,7 +84,7 @@ class PortfolioController extends Controller
             $image = $request->file('portfolio_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
 
-            Image::make($image)->resize(1020,519)->save('upload/portfolio/'.$name_gen);
+            Image::make($image)->resize(800,800)->save('upload/portfolio/'.$name_gen);
             $save_url = 'upload/portfolio/'.$name_gen;
 
             Portfolio::findOrFail($portfolio_id)->update([
@@ -115,25 +121,35 @@ class PortfolioController extends Controller
 
         } // end Else
 
-     } // End Method 
+    } // End Method 
 
 
-     public function DeletePortfolio($id){
-
+    public function DeletePortfolio($id)
+    {
         $portfolio = Portfolio::findOrFail($id);
+
+        // Delete the main portfolio image
         $img = $portfolio->portfolio_image;
-        unlink($img);
+        unlink(public_path($img));
 
-        Portfolio::findOrFail($id)->delete();
+        // Delete associated multi images
+        $multiImages = MultiImage::where('portfolio_id', $id)->get();
+        foreach ($multiImages as $multiImage) {
+            $multiImg = $multiImage->multi_image;
+            unlink(public_path($multiImg));
+            $multiImage->delete();
+        }
 
-         $notification = array(
-            'message' => 'Portfolio Image Deleted Successfully', 
+        // Delete the portfolio entry itself
+        $portfolio->delete();
+
+        $notification = [
+            'message' => 'Portfolio and associated images deleted successfully',
             'alert-type' => 'success'
-        );
+        ];
 
-        return redirect()->back()->with($notification);       
-
-     }// End Method 
+        return redirect()->back()->with($notification);
+    }
 
 
      public function PortfolioDetails($id){
@@ -153,15 +169,15 @@ class PortfolioController extends Controller
       
 
 
-     public function StoreMultiImage(Request $request)
+    public function StoreMultiImage(Request $request)
     {
-    $portfolio_id = $request->input('portfolio_id');
-    $images = $request->file('multi_img');
+        $portfolio_id = $request->input('portfolio_id');
+        $images = $request->file('multi_img');
 
-    foreach ($images as $image) {
+        foreach ($images as $image) {
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-        Image::make($image)->resize(220, 220)->save('upload/multi/' . $name_gen);
+        Image::make($image)->resize(800, 800)->save('upload/multi/' . $name_gen);
         $save_url = 'upload/multi/' . $name_gen;
 
         MultiImage::create([
@@ -169,7 +185,7 @@ class PortfolioController extends Controller
             'multi_image' => $save_url,
             'created_at' => now()
         ]);
-    }
+        }
 
         $notification = [
             'message' => 'Multi Images Inserted Successfully',
@@ -179,6 +195,9 @@ class PortfolioController extends Controller
         return redirect()->route('all.multi.image')->with($notification);
     }
 
+    public function AddMultiImage(){
+        return view('admin.protfolio.add_multi_image');
+    } // End Method
 
 
      public function AllMultiImage(){
@@ -205,7 +224,7 @@ class PortfolioController extends Controller
             $image = $request->file('multi_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
 
-            Image::make($image)->resize(220,220)->save('upload/multi/'.$name_gen);
+            Image::make($image)->resize(800,800)->save('upload/multi/'.$name_gen);
             $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::findOrFail($multi_image_id)->update([

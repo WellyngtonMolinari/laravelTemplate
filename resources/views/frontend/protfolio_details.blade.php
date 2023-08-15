@@ -36,7 +36,8 @@ Galeria | {{ $homeslides->title }}
                     @foreach($portfolio->multiImages as $multiImage)
                     <div class="swiper-slide">
                       @php
-                          $resizedImage = Image::make(public_path($multiImage->multi_image))->resize(800, 600);
+                          $resizedImage = Image::make(public_path($multiImage->multi_image))
+                          // ->resize(800, 600);
                       @endphp
                       <img src="{{ $resizedImage->encode('data-url') }}">
                   </div>

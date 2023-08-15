@@ -55,6 +55,8 @@
                 <li><a href="{{ route('add.portfolio') }}">Adicionar Portfolio</a></li>
                  
                 <li><a href="{{ route('all.multi.image') }}">Todas Multi Imagens</a></li>
+
+                <li><a href="{{ route('add.multi.image') }}">Adicionar Multi Imagens</a></li>
             </ul>
         </li>
 
