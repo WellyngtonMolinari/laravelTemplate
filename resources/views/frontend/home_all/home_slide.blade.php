@@ -32,3 +32,13 @@ $allCarousel = App\Models\Carousel::latest()->get();
     </div>
 
 </section>
+
+ <!--=============== type JS  ===============-->
+ <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>  
+ <script>
+   var typed = new Typed('#element', {
+     strings: ['Exemplo 1', 'Descrição 2', 'Texto 3'],
+     typeSpeed: 100,
+     loop: true,
+   });
+ </script> 

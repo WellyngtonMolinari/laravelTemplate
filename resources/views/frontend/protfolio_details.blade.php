@@ -14,7 +14,7 @@ Galeria | {{ $homeslides->title }}
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Portfolio Details</li>
+          <li>Detalhes</li>
         </ol>
         <h2></h2>
 
@@ -49,16 +49,17 @@ Galeria | {{ $homeslides->title }}
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>Informações:</h3>
               <ul>
-                <li><strong>Category</strong>: {{ $portfolio->category }}</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Categoria</strong>: {{ $portfolio->category }}</li>
+                <li><strong>Nome</strong>: {{ $portfolio->portfolio_name }}</li>
+                <li><strong>Título</strong>: {{ $portfolio->portfolio_name }}</li>
+                <li><strong>Adicionado em</strong>: {{ Carbon\Carbon::parse($portfolio->created_at)->format('d/m/Y') }}</a></li>
+                <li><strong>Atualizado em</strong>: {{ Carbon\Carbon::parse($portfolio->updated_at)->format('d/m/Y') }}</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Descrição:</h2>
               <p>
                 {!! $portfolio->portfolio_description !!} 
               </p>

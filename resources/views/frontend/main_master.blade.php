@@ -27,8 +27,8 @@
 <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
 
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
+<!-- Template Main CSS File -->
+<link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
 
   <!-- Include Swiper CSS -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -74,15 +74,7 @@
 
 
 
-  <!--=============== type JS  ===============-->
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-  <script>
-    var typed = new Typed('#element', {
-      strings: ['Exemplo 1', 'Descrição 2', 'Texto 3'],
-      typeSpeed: 100,
-      loop: true,
-    });
-  </script>
+ 
 </body>
 
 </html>

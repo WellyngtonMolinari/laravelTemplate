@@ -520,15 +520,15 @@ Home | {{ $homeslides->title }}
         });
     });
 
-    var swiper = new Swiper('.swiper-container', {
-  slidesPerView: '4', // Adjust this based on your design preference
-  spaceBetween: 50, // Adjust spacing between logos
-  loop: true, // Enable looping
-  autoplay: {
-    delay: 2000, // Set autoplay delay (adjust as needed)
-  },
-});
-</script>
+      var swiper = new Swiper('.swiper-container', {
+    slidesPerView: '4', // Adjust this based on your design preference
+    spaceBetween: 50, // Adjust spacing between logos
+    loop: true, // Enable looping
+    autoplay: {
+      delay: 2000, // Set autoplay delay (adjust as needed)
+    },
+  });
+  </script>
 
 
 @endsection
