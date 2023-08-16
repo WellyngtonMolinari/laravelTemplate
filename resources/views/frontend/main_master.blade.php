@@ -37,6 +37,9 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/496bbc51ac.js" crossorigin="anonymous"></script>
+
 <body>
 
   <!-- ======= Header ======= -->

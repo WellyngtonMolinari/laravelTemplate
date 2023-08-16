@@ -2,6 +2,7 @@
 @section('main')
 @php
 $homeslides = App\Models\HomeSlide::find(1);
+$allfooter = App\Models\Footer::find(1);
 @endphp
 @section('title')
 Galeria | {{ $homeslides->title }}
@@ -53,7 +54,7 @@ Galeria | {{ $homeslides->title }}
               <ul>
                 <li><strong>Categoria</strong>: {{ $portfolio->category }}</li>
                 <li><strong>Nome</strong>: {{ $portfolio->portfolio_name }}</li>
-                <li><strong>Título</strong>: {{ $portfolio->portfolio_name }}</li>
+                <li><strong>Título</strong>: {{ $portfolio->portfolio_title }}</li>
                 <li><strong>Adicionado em</strong>: {{ Carbon\Carbon::parse($portfolio->created_at)->format('d/m/Y') }}</a></li>
                 <li><strong>Atualizado em</strong>: {{ Carbon\Carbon::parse($portfolio->updated_at)->format('d/m/Y') }}</a></li>
               </ul>
@@ -64,6 +65,16 @@ Galeria | {{ $homeslides->title }}
                 {!! $portfolio->portfolio_description !!} 
               </p>
             </div>
+
+            <!-- WhatsApp Button -->
+            <div class="whatsapp-button">
+              <a href="https://wa.me/{{ $allfooter->number }}?text=Ol%C3%A1%2C%20estou%20interessado%20no%20produto%20{{ urlencode($portfolio->portfolio_title) }}%20e%20gostaria%20de%20comprar"
+                 class="btn btn-success" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-whatsapp"></i> Encomendar via WhatsApp
+              </a>
+          </div>
+          
+
           </div>
 
         </div>

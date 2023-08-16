@@ -3,6 +3,7 @@
 
 $route = Route::current()->getName();
 $homeslides = App\Models\HomeSlide::find(1);
+$allfooter = App\Models\Footer::find(1);
 @endphp
 
 <header id="header" class="fixed-top header-inner-pages" >
@@ -21,7 +22,9 @@ $homeslides = App\Models\HomeSlide::find(1);
           <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
           <li><a class="nav-link {{ $route == 'home.blog' ? 'active' : '' }}" href="{{ route('home.blog') }}">Blog</a></li>
-          <li><a class="getstarted scrollto" href="#contact">Agendar consulta</a></li>
+          
+          <li><a class="getstarted scrollto" href="https://wa.me/{{ $allfooter->number }}?" target="_blank" rel="noopener noreferrer">
+            Entrar em Contato <i class="fab fa-whatsapp"></i></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
