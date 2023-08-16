@@ -17,7 +17,7 @@ $homeslides = App\Models\HomeSlide::find(1);
           <li><a class="nav-link {{ $route == 'home' ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link {{ $route == 'home.about' ? 'active' : '' }}" href="{{ route('home.about') }}">Sobre</a></li>
           <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Galeria</a></li>
+          <li><a class="nav-link {{ $route == 'home.portfolio' ? 'active' : '' }}" href="{{ route('home.portfolio') }}">Galeria</a></li>
           <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
           <li><a class="nav-link {{ $route == 'home.blog' ? 'active' : '' }}" href="{{ route('home.blog') }}">Blog</a></li>

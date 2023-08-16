@@ -13,7 +13,7 @@ Galeria | {{ $homeslides->title }}
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{ route('home')}}">Home</a></li>
           <li>Detalhes</li>
         </ol>
         <h2></h2>

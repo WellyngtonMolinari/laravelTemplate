@@ -18,7 +18,7 @@ Categorias Blog | {{ $homeslides->title }}
         <div class="container">
   
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('home')}}">Home</a></li>
             <li>Blog Details</li>
           </ol>
           <h2></h2>

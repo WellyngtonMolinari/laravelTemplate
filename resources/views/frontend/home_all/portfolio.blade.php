@@ -1,5 +1,6 @@
 @php
-$portfolio = App\Models\Portfolio::latest()->get();
+$portfolioLimit = 6; // Set the desired limit
+$portfolio = App\Models\Portfolio::latest()->take($portfolioLimit)->get();
 $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
 @endphp
      
@@ -12,7 +13,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
     </div>
 
     <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-      <li data-filter="*" class="filter-active">All</li>
+      <li data-filter="*" class="filter-active">Tudo</li>
       @foreach($portfoliocategory as $category)
           <li data-filter=".filter-{{ Str::slug($category->portfolio_category) }}">{{ $category->portfolio_category }}</li>
       @endforeach
@@ -33,7 +34,30 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
           </div>
       @endforeach
   </div>
-  
 
+  <div class="text-center mt-4">
+    <a href="{{ route('home.portfolio') }}" class="btn btn-primary">Ver Mais</a>
   </div>
+
+</div>
 </section>
+
+<!-- ... Additional CSS ... -->
+<style>
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+</style>
