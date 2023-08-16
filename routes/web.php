@@ -153,6 +153,8 @@ Route::controller(FooterController::class)->group(function () {
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
     Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
    
+    Route::get('/terms', 'TermsController')->name('terms.index');
+    Route::get('/privacy', 'PrivacyController')->name('privacy.index');
      
 });
 

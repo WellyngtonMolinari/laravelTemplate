@@ -40,7 +40,15 @@ class FooterController extends Controller
 
     } // end method 
 
+    public function TermsController()
+    {
+        return view('frontend.terms');
+    }
 
+    public function PrivacyController()
+    {
+        return view('frontend.privacy');
+    }
 
 }
  

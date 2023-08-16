@@ -25,7 +25,7 @@ $allfooter = App\Models\Footer::find(1);
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-6 footer-contact">
             <h3>Endereço</h3>
             <p>
               {{ $allfooter->adress }}<br>
@@ -35,18 +35,18 @@ $allfooter = App\Models\Footer::find(1);
             </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Links úteis</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre nós</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Termos de serviço</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Política de privacidade</a></li>
-            </ul>
+<ul>
+  <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Início</a></li>
+  <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home.about') }}">Sobre nós</a></li>
+  <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home.portfolio') }}">Galeria</a></li>
+  <li><i class="bx bx-chevron-right"></i> <a href="{{ route('terms.index') }}">Termos de uso</a></li>
+  <li><i class="bx bx-chevron-right"></i> <a href="{{ route('privacy.index') }}">Política de privacidade</a></li>
+</ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          {{-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Nossos serviços</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Serviço 1</a></li>
@@ -55,7 +55,7 @@ $allfooter = App\Models\Footer::find(1);
               <li><i class="bx bx-chevron-right"></i> <a href="#">Serviço 4</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Serviço 5</a></li>
             </ul>
-          </div>
+          </div> --}}
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Nossas redes sociais</h4>
