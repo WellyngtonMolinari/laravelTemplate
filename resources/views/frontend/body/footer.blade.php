@@ -28,10 +28,10 @@ $allfooter = App\Models\Footer::find(1);
           <div class="col-lg-4 col-md-6 footer-contact">
             <h3>Endereço</h3>
             <p>
-              {{ $allfooter->adress }}<br>
-               
-              <strong>Celular:</strong> {{ $allfooter->number }}<br><br>
+              <strong>Endereço:</strong> {{ $allfooter->adress }}<br>
+              <strong>Celular:</strong> {{ $allfooter->number }}<br>
               <strong>Email:</strong> {{ $allfooter->email }}<br>
+              <strong>Descrição:</strong> {{ $allfooter->short_description }}<br>
             </p>
           </div>
 

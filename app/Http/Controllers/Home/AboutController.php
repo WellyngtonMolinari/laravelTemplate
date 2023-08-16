@@ -28,7 +28,7 @@ class AboutController extends Controller
             $image = $request->file('about_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
 
-            Image::make($image)->resize(523,605)->save('upload/home_about/'.$name_gen);
+            Image::make($image)->resize(600,600)->save('upload/home_about/'.$name_gen);
             $save_url = 'upload/home_about/'.$name_gen;
 
             About::findOrFail($about_id)->update([
