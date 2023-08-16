@@ -40,7 +40,7 @@ class AboutController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'About Page Updated with Image Successfully', 
+            'message' => 'Atualizado com Sucesso', 
             'alert-type' => 'success'
         );
 
@@ -56,7 +56,7 @@ class AboutController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'About Page Updated without Image Successfully', 
+            'message' => 'Atualizado com Sucesso', 
             'alert-type' => 'success'
         );
 

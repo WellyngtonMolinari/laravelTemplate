@@ -49,7 +49,7 @@ class PortfolioController extends Controller
         }
 
         $notification = [
-            'message' => 'Portfolio and Multi Images Inserted Successfully',
+            'message' => 'Adicionado com Sucesso!',
             'alert-type' => 'success'
         ];
 
@@ -96,7 +96,7 @@ class PortfolioController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'Portfolio Updated with Image Successfully', 
+            'message' => 'Atualizado com Sucesso!', 
             'alert-type' => 'success'
         );
 
@@ -113,7 +113,7 @@ class PortfolioController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'Portfolio Updated without Image Successfully', 
+            'message' => 'Atualizado sem Imagem!', 
             'alert-type' => 'success'
         );
 
@@ -144,7 +144,7 @@ class PortfolioController extends Controller
         $portfolio->delete();
 
         $notification = [
-            'message' => 'Portfolio and associated images deleted successfully',
+            'message' => 'Deletado com sucesso!',
             'alert-type' => 'success'
         ];
 
@@ -188,7 +188,7 @@ class PortfolioController extends Controller
         }
 
         $notification = [
-            'message' => 'Multi Images Inserted Successfully',
+            'message' => 'Múltiplas imagens adicionadas!',
             'alert-type' => 'success'
         ];
 
@@ -234,7 +234,7 @@ class PortfolioController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'Multi Image Updated Successfully', 
+            'message' => 'Múltiplas Imagens Atualizadas!', 
             'alert-type' => 'success'
         );
 
@@ -254,7 +254,7 @@ class PortfolioController extends Controller
         MultiImage::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Multi Image Deleted Successfully', 
+            'message' => 'Múltiplas Imagens Deletadas!', 
             'alert-type' => 'success'
         );
 

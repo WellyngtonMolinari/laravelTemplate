@@ -31,7 +31,7 @@ class BlogCategoryController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'Blog Category Inserted Successfully', 
+            'message' => 'Categoria de Blog Inserida', 
             'alert-type' => 'success'
         );
 
@@ -57,7 +57,7 @@ class BlogCategoryController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'Blog Category Updated Successfully', 
+            'message' => 'Categoria de Blog Atualizada!', 
             'alert-type' => 'success'
         );
 
@@ -70,7 +70,7 @@ class BlogCategoryController extends Controller
         BlogCategory::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Blog Category Deleted Successfully', 
+            'message' => 'Categoria de Blog Deletada!', 
             'alert-type' => 'success'
         );
 

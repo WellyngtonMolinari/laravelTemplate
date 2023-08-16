@@ -42,7 +42,7 @@ class BlogController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'Blog Inserted Successfully', 
+            'message' => 'Blog Adicionado com Sucesso!', 
             'alert-type' => 'success'
         );
 
@@ -81,7 +81,7 @@ class BlogController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'Blog Updated with Image Successfully', 
+            'message' => 'Blog Atualizado com Imagem!', 
             'alert-type' => 'success'
         );
 
@@ -98,7 +98,7 @@ class BlogController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'Blog Updated without Image Successfully', 
+            'message' => 'Blog Atualizado sem Imagem!', 
             'alert-type' => 'success'
         );
 
@@ -119,7 +119,7 @@ public function DeleteBlog($id){
         Blog::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Blog Deleted Successfully', 
+            'message' => 'Blog Deletado!', 
             'alert-type' => 'success'
         );
 

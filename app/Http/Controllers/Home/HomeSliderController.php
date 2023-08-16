@@ -42,7 +42,7 @@ class HomeSliderController extends Controller
             ]);
 
             $notification = [
-                'message' => 'Home Slide Updated without Image Successfully',
+                'message' => 'Sessão Principal Atualizada',
                 'alert-type' => 'success',
             ];
         } else {
@@ -69,7 +69,7 @@ class HomeSliderController extends Controller
             }
 
             $notification = [
-                'message' => 'Home Slide Updated with Image and Carousel Successfully',
+                'message' => 'Adicionado com Sucesso!',
                 'alert-type' => 'success',
             ];
         }
@@ -115,7 +115,7 @@ class HomeSliderController extends Controller
     }
 
         $notification = [
-            'message' => 'Carousel Images Inserted Successfully',
+            'message' => 'Imagens adicionadas!',
             'alert-type' => 'success'
         ];
 
@@ -164,7 +164,7 @@ class HomeSliderController extends Controller
             ]);
 
             $notification = array(
-                'message' => 'Carousel Updated Successfully',
+                'message' => 'Carrossel Atualizado!',
                 'alert-type' => 'success',
             );
 
@@ -183,7 +183,7 @@ class HomeSliderController extends Controller
         Carousel::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Carousel Successfully', 
+            'message' => 'Carrossel Deletado!', 
             'alert-type' => 'success'
         );
 

@@ -31,7 +31,7 @@ class PortfolioCategoryController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'portfolio Category Inserted Successfully', 
+            'message' => 'Categoria Adicionada com sucesso!', 
             'alert-type' => 'success'
         );
 
@@ -57,7 +57,7 @@ class PortfolioCategoryController extends Controller
             ]); 
 
             $notification = array(
-            'message' => 'portfolio Category Updated Successfully', 
+            'message' => 'Categoria Atualizada!', 
             'alert-type' => 'success'
         );
 
@@ -70,7 +70,7 @@ class PortfolioCategoryController extends Controller
         PortfolioCategory::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'portfolio Category Deleted Successfully', 
+            'message' => 'Categoria Deletada!', 
             'alert-type' => 'success'
         );
 

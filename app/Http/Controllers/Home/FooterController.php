@@ -32,7 +32,7 @@ class FooterController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'Footer Updated Successfully', 
+            'message' => 'Rodapé Atualizado!', 
             'alert-type' => 'success'
         );
 
