@@ -102,10 +102,10 @@
             <li>
                 <a class="has-arrow waves-effect">
                     <i class="ri-profile-line"></i>
-                    <span>Rodapé Configuração</span>
+                    <span>Rodapé </span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('footer.setup') }}">Rodapé Configuração</a></li>
+                    <li><a href="{{ route('footer.setup') }}">Atualizar Rodapé </a></li>
                      
                     
                 </ul>
@@ -119,7 +119,7 @@
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                     <li>
-                        <a href="{{ route('contact.message') }}">Mensagem de Contato</a>
+                        <a href="{{ route('contact.message') }}">Ver Mensagens</a>
                     </li>
                      
                 </ul>

@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Adicionar Categoria de Portfolio </h4> <br><br>
+            <h4 class="card-title">Adicionar Categoria de Produto </h4> <br><br>
             
             <form method="post" id="myForm" action="{{ route('store.portfolio.category') }}" >
                 @csrf
@@ -18,7 +18,7 @@
                
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Nome da Categoria de Portfolio</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome da Categoria de Produto</label>
                 <div class="form-group col-sm-10">
                     <input name="portfolio_category" class="form-control" type="text" id="example-text-input">
                     

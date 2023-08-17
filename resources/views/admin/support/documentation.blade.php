@@ -35,6 +35,7 @@
                                 <li><a href="#posts-blog">Posts Blog</a></li>
                                 <li><a href="#rodape">Rodapé</a></li>
                                 <li><a href="#mensagens-contato">Mensagens de Contato</a></li>
+                                <li><a href="#atualizações">Atualizações e Mudanças</a></li>
                             </ul>
                         </div>
 
@@ -63,35 +64,43 @@
 
                         <div class="documentation-topic" id="categoria-portfolio">
                             <h5 class="mt-4">4. Categoria Produtos</h5>
-                            <p>Saiba como personalizar as Categorias de Produtos.</p>
-                            <p>I. Na sub-sessão ""</p>
-                            <p>II. Na sub-sessão ""</p>
+                            <p>Saiba como personalizar as Categorias de Produtos, que serão usadas na sua Galeria para filtrar os tipos de produtos.</p>
+                            <p>I. Na sub-sessão "Ver Categoria Produtos", você pode visualizar em uma lista todas as categorias de produtos que foram criadas.</p>
+                            <p>II. Na sub-sessão "Adicionar Categoria Produtos", você pode criar uma nova categoria para filtrar seus produtos, basta preencher um nome de categoria no campo especificado e clicar em "Inserir".</p>
                         </div>
 
                         <div class="documentation-topic" id="categoria-blog">
                             <h5 class="mt-4">5. Categoria Blog</h5>
-                            <p>Saiba como personalizar as Categorias do seu Blog.</p>
-                            <p>I. Na sub-sessão ""</p>
-                            <p>II. Na sub-sessão ""</p>
+                            <p>Saiba como personalizar as Categorias do seu Blog, que será usada para filtrar o tipo de assunto do seu blog.</p>
+                            <p>I. Na sub-sessão "Ver Categoria Blog", você pode visualizar as categorias já criadas para suas postagens no blog</p>
+                            <p>II. Na sub-sessão "Adicionar Categoria Blog", você pode adicionar uma nova Categoria de Blog, preenchendo o campo específico com o nome desejado e clicando em "Inserir".</p>
                         </div>
 
                         <div class="documentation-topic" id="posts-blog">
                             <h5 class="mt-4">6. Posts Blog</h5>
-                            <p>Saiba como personalizar as Postagens do Blog.</p>
-                            <p>I. Na sub-sessão ""</p>
-                            <p>II. Na sub-sessão ""</p>
+                            <p>Saiba como personalizar e criar as Postagens do Blog.</p>
+                            <p>I. Na sub-sessão "Todos Posts", você pode visualizar todos as postagens já publicadas no blog, com todas as informações necessárias em uma lista.</p>
+                            <p>II. Na sub-sessão "Adicionar Blog Post", você pode criar sua nova postagem preenchend todos os campos, lembrando que antes será preciso criar uma Categoria de Blog. O campo "Blog Imagem" ao final será usado como capa de introdução para a postagem.</p>
                         </div>
 
                         <div class="documentation-topic" id="rodape">
                             <h5 class="mt-4">7. Rodapé</h5>
                             <p>Saiba como personalizar as informações do Rodapé.</p>
-                            <p>I. Na sub-sessão ""</p>
+                            <p>I. Na sub-sessão "Atualizar Ropé", você pode adicionar o número do seu celular (sem espaços e sinais, somente o número completo, com DDD), como também a "Descrição Curta", "Endereço", "email", "Facebook", "Instagram" e "Copyright" que serão exibidos ao final do site.</p>
                         </div>
 
                         <div class="documentation-topic" id="mensagens-contato">
                             <h5 class="mt-4">8. Mensagens de Contato</h5>
                             <p>Saiba como verificar as Mensagens fornecidas pelos usuários que visitam seu site.</p>
-                            <p>I. Na sub-sessão ""</p>
+                            <p>I. Na sub-sessão "Ver Mensagens", você pode visualizar uma lista com todas as mensagens deixadas pelos visitantes do seu site.</p>
+                        </div>
+
+                        
+
+                        <div class="documentation-topic" id="atualizações">
+                            <h5 class="mt-4">Atualizações</h5>
+                            <p>Por enquanto esses são os conteúdos disponíveis desse sistema, a medida que novas atualizações forem publicadas elas serão exibidas aqui:</p>
+                            <p>I. Não há nada para mostrar.</p>
                         </div>
                         
 
