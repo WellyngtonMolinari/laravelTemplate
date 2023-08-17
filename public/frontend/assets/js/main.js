@@ -256,7 +256,15 @@
     carouselContainer.style.transform = `translateX(${offset}%)`;
   }
 
-  setInterval(rotateCarousel, 10000); // Rotate every 5 seconds
+  // Call rotateCarousel after a 2-second delay
+  setTimeout(() => {
+    rotateCarousel();
+
+    // Start rotating the carousel every 10 seconds (10000 milliseconds)
+    setInterval(rotateCarousel, 10000);
+  }, 2000); // 2000 milliseconds = 2 seconds
+
+
 
   document.cookie = 'cookie2=value2; SameSite=None; Secure';
   

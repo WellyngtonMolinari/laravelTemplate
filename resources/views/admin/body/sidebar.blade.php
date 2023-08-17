@@ -22,7 +22,7 @@
                 
         <li>
             <a class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-layout-top-2-line"></i>
                 <span>Sessão Principal</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -36,7 +36,7 @@
 
           <li>
             <a class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-team-line"></i>
                 <span>Sobre Nós Site</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -47,7 +47,7 @@
 
         <li>
             <a class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-archive-line"></i>
                 <span>Sessão Produtos</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -66,7 +66,7 @@
 
     <li>
         <a class="has-arrow waves-effect">
-            <i class="ri-account-circle-line"></i>
+            <i class="ri-file-list-2-line"></i>
             <span>Categoria Produtos</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
@@ -77,7 +77,7 @@
 
     <li>
         <a class="has-arrow waves-effect">
-            <i class="ri-account-circle-line"></i>
+            <i class="ri-file-list-3-line"></i>
             <span>Categoria Blog</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
@@ -88,7 +88,7 @@
 
             <li>
                 <a class="has-arrow waves-effect">
-                    <i class="ri-profile-line"></i>
+                    <i class="ri-edit-2-line"></i>
                     <span>Posts de Blog</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
@@ -101,7 +101,7 @@
 
             <li>
                 <a class="has-arrow waves-effect">
-                    <i class="ri-profile-line"></i>
+                    <i class="ri-layout-bottom-2-line"></i>
                     <span>Rodapé </span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
@@ -114,7 +114,7 @@
 
             <li>
                 <a class="has-arrow waves-effect">
-                    <i class="ri-profile-line"></i>
+                    <i class="ri-mail-send-line"></i>
                     <span>Mensagem de Contato</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">

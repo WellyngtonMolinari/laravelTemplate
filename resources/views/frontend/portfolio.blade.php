@@ -32,7 +32,7 @@ Galeria | {{ $homeslides->title }}
           </div>
       
           <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter="*" class="filter-active">Tudo</li>
             @foreach($portfoliocategory as $category)
                 <li data-filter=".filter-{{ Str::slug($category->portfolio_category) }}">{{ $category->portfolio_category }}</li>
             @endforeach

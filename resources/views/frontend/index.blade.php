@@ -37,6 +37,7 @@ Home | {{ $homeslides->title }}
         <div class="swiper-slide">
           <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
         </div>
+        <!-- Cars Brands -->
         <div class="swiper-slide">
           <img src="{{ asset('frontend/assets/img/clients/fiat.png') }}" class="img-fluid" alt="">
         </div>
