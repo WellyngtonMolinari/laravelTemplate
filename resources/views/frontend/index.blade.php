@@ -11,7 +11,7 @@ Home | {{ $homeslides->title }}
 @include('frontend.home_all.home_slide')
 <!-- End Hero -->
 
-<!-- ======= Mershan Section ======= -->
+{{-- <!-- ======= Mershan Section ======= -->
 <section id="clients" class="clients section-bg">
   <div class="container">
     <div class="swiper-container">
@@ -64,7 +64,7 @@ Home | {{ $homeslides->title }}
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 
   <!-- ======= About Us Section ======= -->
@@ -179,7 +179,7 @@ Home | {{ $homeslides->title }}
     </div>
   </section>--><!-- End Skills Section -->
 
-  <!-- ======= Services Section ======= -->
+  {{-- <!-- ======= Services Section ======= -->
   <section id="services" class="services section-bg">
     <div class="container" data-aos="fade-up">
 
@@ -225,7 +225,7 @@ Home | {{ $homeslides->title }}
       </div>
 
     </div>
-  </section><!-- End Services Section -->
+  </section><!-- End Services Section --> --}}
 
   <!-- ======= Cta Section ======= -->
   <section id="cta" class="cta">
@@ -248,7 +248,7 @@ Home | {{ $homeslides->title }}
   @include('frontend.home_all.portfolio')
   <!-- End Portfolio Section -->
 
-  <!-- ======= Team Section ======= -->
+  {{-- <!-- ======= Team Section ======= -->
   <section id="team" class="team section-bg">
     <div class="container" data-aos="fade-up">
 
@@ -295,7 +295,7 @@ Home | {{ $homeslides->title }}
  
 
     </div>
-  </section><!-- End Team Section -->
+  </section><!-- End Team Section --> --}}
 
   {{-- <!-- ======= Pricing Section ======= -->
   <section id="pricing" class="pricing">

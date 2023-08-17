@@ -40,6 +40,8 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/496bbc51ac.js" crossorigin="anonymous"></script>
 
+</head>
+
 <body>
 
   <!-- ======= Header ======= -->

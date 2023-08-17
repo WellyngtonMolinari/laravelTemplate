@@ -7,7 +7,7 @@ $allfooter = App\Models\Footer::find(1);
 
 <footer id="footer">
 
-    <div class="footer-newsletter">
+    {{-- <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
@@ -19,7 +19,7 @@ $allfooter = App\Models\Footer::find(1);
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <div class="footer-top">
       <div class="container">
