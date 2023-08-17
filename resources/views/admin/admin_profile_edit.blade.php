@@ -10,13 +10,13 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit Profile Page </h4>
+            <h4 class="card-title">Editar </h4>
             
             <form method="post" action="{{ route('store.profile') }}" enctype="multipart/form-data">
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome</label>
                 <div class="col-sm-10">
                     <input name="name" class="form-control" type="text" value="{{ $editData->name }}"  id="example-text-input">
                 </div>
@@ -24,7 +24,7 @@
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">User Email</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input name="email" class="form-control" type="text" value="{{ $editData->email }}"  id="example-text-input">
                 </div>
@@ -33,7 +33,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">UserName</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome Usuário</label>
                 <div class="col-sm-10">
                     <input name="username" class="form-control" type="text" value="{{ $editData->username }}"  id="example-text-input">
                 </div>
@@ -42,7 +42,7 @@
 
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Profile Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem de Perfil</label>
                 <div class="col-sm-10">
        <input name="profile_image" class="form-control" type="file"  id="image">
                 </div>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <!-- end row -->
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Profile">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Atualizar Perfil">
             </form>
              
            

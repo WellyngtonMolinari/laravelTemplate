@@ -18,7 +18,7 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         $notification = array(
-            'message' => 'User Logout Successfully', 
+            'message' => 'Saiu com Sucesso', 
             'alert-type' => 'success'
         );
 
@@ -58,7 +58,7 @@ class AdminController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Admin Profile Updated Successfully', 
+            'message' => 'Atualizado com Sucesso', 
             'alert-type' => 'info'
         );
 
@@ -89,10 +89,10 @@ class AdminController extends Controller
             $users->password = bcrypt($request->newpassword);
             $users->save();
 
-            session()->flash('message','Password Updated Successfully');
+            session()->flash('message','Senha Alterada!');
             return redirect()->back();
         } else{
-            session()->flash('message','Old password is not match');
+            session()->flash('message','Senha Antiga não bate com a nova');
             return redirect()->back();
         }
 
