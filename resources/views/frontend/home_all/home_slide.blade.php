@@ -20,7 +20,7 @@ $allCarousel = App\Models\Carousel::latest()->get();
           <h1>{{ $homeslide->short_title  }}<br> <span id="element"></span></h1>
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Agendar</a>
+            <a href="#contact" class="btn-get-started scrollto">Contato</a>
             <a href="{{ $homeslide->video_url  }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Assistir</span></a>
           </div>
         </div>
