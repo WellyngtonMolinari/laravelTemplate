@@ -21,21 +21,21 @@
                            
                 
         <li>
-            <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <a class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
-                <span>Sessão Título Site</span>
+                <span>Sessão Principal</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('home.slide') }}">Título do Site</a></li>
-                <li><a href="{{ route('all.carousel') }}">Todos Carrossel</a></li>
                 <li><a href="{{ route('add.carousel') }}">Adicionar Carrossel</a></li>
+                <li><a href="{{ route('all.carousel') }}">Todos Carrossel</a></li>
               
             </ul>
         </li>
 
 
           <li>
-            <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <a class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
                 <span>Sobre Nós Site</span>
             </a>
@@ -46,7 +46,7 @@
 
 
         <li>
-            <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <a class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
                 <span>Sessão Portfólio</span>
             </a>
@@ -65,7 +65,7 @@
                             <li class="menu-title">Páginas</li>
 
     <li>
-        <a href="javascript: void(0);" class="has-arrow waves-effect">
+        <a class="has-arrow waves-effect">
             <i class="ri-account-circle-line"></i>
             <span>Categoria portfolio</span>
         </a>
@@ -76,7 +76,7 @@
     </li>
 
     <li>
-        <a href="javascript: void(0);" class="has-arrow waves-effect">
+        <a class="has-arrow waves-effect">
             <i class="ri-account-circle-line"></i>
             <span>Categoria Blog</span>
         </a>
@@ -87,7 +87,7 @@
     </li>
 
             <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <a class="has-arrow waves-effect">
                     <i class="ri-profile-line"></i>
                     <span>Posts de Blog</span>
                 </a>
@@ -100,7 +100,7 @@
 
 
             <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <a class="has-arrow waves-effect">
                     <i class="ri-profile-line"></i>
                     <span>Rodapé Configuração</span>
                 </a>
@@ -113,7 +113,7 @@
 
 
             <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <a class="has-arrow waves-effect">
                     <i class="ri-profile-line"></i>
                     <span>Mensagem de Contato</span>
                 </a>
@@ -126,8 +126,18 @@
             </li>
                            
 
-                            
+                    <li class="menu-title">Suporte</li>
                          
+            <li>
+                <a class="has-arrow waves-effect">
+                    <i class="ri-account-circle-line"></i>
+                    <span>Acionar Suporte</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('support.documentation') }}">Ver Documentação</a></li>
+                    <li><a href="https://wa.me/5535999074206" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+                </ul>
+            </li>
 
                         </ul>
                     </div>

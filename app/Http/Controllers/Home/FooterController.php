@@ -50,5 +50,10 @@ class FooterController extends Controller
         return view('frontend.privacy');
     }
 
+    public function DocumentationController()
+    {
+        return view('admin.support.documentation');
+    }
+
 }
  
