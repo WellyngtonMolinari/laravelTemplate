@@ -36,7 +36,7 @@ class PortfolioController extends Controller
                 ? $this->uploadAndResizeImage($request->file('portfolio_image'), 'upload/portfolio/')
                 : null,
         ]);
-
+    
         // Store multiple images
         $multiImages = $request->file('multi_img');
         foreach ($multiImages as $multiImage) {
@@ -47,22 +47,22 @@ class PortfolioController extends Controller
                 'created_at' => now(),
             ]);
         }
-
+    
         $notification = [
             'message' => 'Adicionado com Sucesso!',
             'alert-type' => 'success'
         ];
-
+    
         return redirect()->route('all.portfolio')->with($notification);
     }
-
+    
     // New function for uploading and resizing the image
     private function uploadAndResizeImage($image, $folder = 'upload/')
     {
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         
-        // Resize the image to 800x800
-        $resizedImage = Image::make($image)->fit(800, 800);
+        // Resize the image to fit within 800x800 without cropping
+        $resizedImage = Image::make($image)->resize(800, 800);
         $resizedImage->save($folder . 'resized_' . $name_gen);
         
         return $folder . 'resized_' . $name_gen;
