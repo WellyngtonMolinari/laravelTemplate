@@ -76,52 +76,55 @@ class PortfolioController extends Controller
     }// End Method
 
 
-    public function UpdatePortfolio(Request $request){
-
+    public function UpdatePortfolio(Request $request)
+    {
         $portfolio_id = $request->id;
-
+    
         if ($request->file('portfolio_image')) {
             $image = $request->file('portfolio_image');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
-
-            Image::make($image)->resize(800,800)->save('upload/portfolio/'.$name_gen);
-            $save_url = 'upload/portfolio/'.$name_gen;
-
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+    
+            // Delete the old portfolio image
+            $oldPortfolio = Portfolio::findOrFail($portfolio_id);
+            if ($oldPortfolio->portfolio_image) {
+                $oldImage = $oldPortfolio->portfolio_image;
+                unlink(public_path($oldImage));
+            }
+    
+            Image::make($image)->resize(800, 800)->save('upload/portfolio/' . $name_gen);
+            $save_url = 'upload/portfolio/' . $name_gen;
+    
             Portfolio::findOrFail($portfolio_id)->update([
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
                 'category' => $request->category,
                 'portfolio_description' => $request->portfolio_description,
                 'portfolio_image' => $save_url,
-
-            ]); 
-            $notification = array(
-            'message' => 'Atualizado com Sucesso!', 
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('all.portfolio')->with($notification);
-
-        } else{
-
+            ]);
+    
+            $notification = [
+                'message' => 'Atualizado com Sucesso!',
+                'alert-type' => 'success',
+            ];
+    
+            return redirect()->route('all.portfolio')->with($notification);
+        } else {
             Portfolio::findOrFail($portfolio_id)->update([
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
                 'category' => $request->category,
                 'portfolio_description' => $request->portfolio_description,
-                 
-
-            ]); 
-            $notification = array(
-            'message' => 'Atualizado sem Imagem!', 
-            'alert-type' => 'success'
-        );
-
-       return redirect()->route('all.portfolio')->with($notification);
-
-        } // end Else
-
-    } // End Method 
+            ]);
+    
+            $notification = [
+                'message' => 'Atualizado sem Imagem!',
+                'alert-type' => 'success',
+            ];
+    
+            return redirect()->route('all.portfolio')->with($notification);
+        }
+    }
+    
 
 
     public function DeletePortfolio($id)
@@ -216,33 +219,37 @@ class PortfolioController extends Controller
      }// End Method 
 
 
-     public function UpdateMultiImage(Request $request){
-
-           $multi_image_id = $request->id;
-
-        if ($request->file('multi_image')) {
-            $image = $request->file('multi_image');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
-
-            Image::make($image)->resize(800,800)->save('upload/multi/'.$name_gen);
-            $save_url = 'upload/multi/'.$name_gen;
-
-            MultiImage::findOrFail($multi_image_id)->update([
-                 
-                'multi_image' => $save_url,
-
-            ]); 
-
-            $notification = array(
-            'message' => 'Múltiplas Imagens Atualizadas!', 
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('all.multi.image')->with($notification);
-
-        }
-
-     }// End Method 
+     public function UpdateMultiImage(Request $request)
+     {
+         $multi_image_id = $request->id;
+     
+         if ($request->file('multi_image')) {
+             $image = $request->file('multi_image');
+             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+     
+             // Delete the old multi image
+             $oldMultiImage = MultiImage::findOrFail($multi_image_id);
+             if ($oldMultiImage->multi_image) {
+                 $oldImage = $oldMultiImage->multi_image;
+                 unlink(public_path($oldImage));
+             }
+     
+             Image::make($image)->resize(800, 800)->save('upload/multi/' . $name_gen);
+             $save_url = 'upload/multi/' . $name_gen;
+     
+             MultiImage::findOrFail($multi_image_id)->update([
+                 'multi_image' => $save_url,
+             ]);
+     
+             $notification = [
+                 'message' => 'Múltiplas Imagens Atualizadas!',
+                 'alert-type' => 'success',
+             ];
+     
+             return redirect()->route('all.multi.image')->with($notification);
+         }
+     }
+     
 
 
      public function DeleteMultiImage($id){
