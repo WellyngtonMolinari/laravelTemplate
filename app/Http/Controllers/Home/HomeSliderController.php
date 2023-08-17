@@ -9,6 +9,7 @@ use App\Models\HomeSlide;
 use Image;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class HomeSliderController extends Controller
 {
@@ -148,29 +149,35 @@ class HomeSliderController extends Controller
 
 
      public function UpdateCarousel(Request $request)
-    {
-        $carousel_img_id = $request->id;
-
-        if ($request->file('carousel_img')) {
-            $image = $request->file('carousel_img');
-            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-
-            Image::make($image)->resize(1920, 1080)->save('upload/carousel/' . $name_gen);
-            $save_url = 'upload/carousel/' . $name_gen;
-
-            $carousel = Carousel::findOrFail($carousel_img_id); // Corrected variable name
-            $carousel->update([
-                'carousel_img' => $save_url,
-            ]);
-
-            $notification = array(
-                'message' => 'Carrossel Atualizado!',
-                'alert-type' => 'success',
-            );
-
-            return redirect()->route('all.carousel')->with($notification);
-        }
-    }
+     {
+         $carousel_img_id = $request->id;
+     
+         if ($request->file('carousel_img')) {
+             $image = $request->file('carousel_img');
+             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+     
+             Image::make($image)->resize(1920, 1080)->save('upload/carousel/' . $name_gen);
+             $save_url = 'upload/carousel/' . $name_gen;
+     
+             $carousel = Carousel::findOrFail($carousel_img_id);
+             
+             // Delete the old carousel image
+             if (File::exists(public_path($carousel->carousel_img))) {
+                 File::delete(public_path($carousel->carousel_img));
+             }
+     
+             $carousel->update([
+                 'carousel_img' => $save_url,
+             ]);
+     
+             $notification = array(
+                 'message' => 'Carrossel Atualizado!',
+                 'alert-type' => 'success',
+             );
+     
+             return redirect()->route('all.carousel')->with($notification);
+         }
+     }
 
 
 
