@@ -18,7 +18,7 @@ $portfolio = App\Models\Portfolio::latest()->get();
                 @csrf
           
              <div class="row mb-3">
-                <label for="portfolio_id" class="col-sm-2 col-form-label">Selecionar Portfólio</label>
+                <label for="portfolio_id" class="col-sm-2 col-form-label">Selecionar Produto</label>
                 <div class="col-sm-10">
                     <select name="portfolio_id" class="form-control">
                         @foreach($portfolio as $portfolio)

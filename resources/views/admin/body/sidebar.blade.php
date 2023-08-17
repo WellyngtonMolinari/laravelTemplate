@@ -48,11 +48,11 @@
         <li>
             <a class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
-                <span>Sessão Portfólio</span>
+                <span>Sessão Produtos</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('all.portfolio') }}">Todos Portfólio</a></li>
-                <li><a href="{{ route('add.portfolio') }}">Adicionar Portfolio</a></li>
+                <li><a href="{{ route('all.portfolio') }}">Todos Produtos</a></li>
+                <li><a href="{{ route('add.portfolio') }}">Adicionar Produtos</a></li>
                  
                 <li><a href="{{ route('all.multi.image') }}">Todas Multi Imagens</a></li>
 
@@ -67,11 +67,11 @@
     <li>
         <a class="has-arrow waves-effect">
             <i class="ri-account-circle-line"></i>
-            <span>Categoria portfolio</span>
+            <span>Categoria Produtos</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('all.portfolio.category') }}">Ver Categoria portfolio</a></li>
-            <li><a href="{{ route('add.portfolio.category') }}">Adicionar Categoria portfolio</a></li>
+            <li><a href="{{ route('all.portfolio.category') }}">Ver Categoria Produtos</a></li>
+            <li><a href="{{ route('add.portfolio.category') }}">Adicionar Categoria Produtos</a></li>
         </ul>
     </li>
 
@@ -130,8 +130,8 @@
                          
             <li>
                 <a class="has-arrow waves-effect">
-                    <i class="ri-account-circle-line"></i>
-                    <span>Acionar Suporte</span>
+                    <i class="ri-customer-service-line"></i>
+                    <span>Suporte</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                     <li><a href="{{ route('support.documentation') }}">Ver Documentação</a></li>

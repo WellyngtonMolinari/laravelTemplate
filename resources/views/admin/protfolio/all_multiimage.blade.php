@@ -31,7 +31,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Imagens</th>
-                            <th>Portfolio</th>
+                            <th>Produtos</th>
                             <th>Ação</th>
                             
                         </thead>

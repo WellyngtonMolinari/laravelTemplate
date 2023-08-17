@@ -13,7 +13,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Protfolio Edit Page </h4>
+            <h4 class="card-title">Editar Produtos </h4>
             
             <form method="post" action="{{ route('update.protfolio') }}" enctype="multipart/form-data">
                 @csrf
@@ -21,7 +21,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
                <input type="hidden" name="id" value="{{  $portfolio->id }}">
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Name</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nome do Produto</label>
                 <div class="col-sm-10">
                     <input name="portfolio_name" class="form-control" type="text" value="{{ $portfolio->portfolio_name }}" id="example-text-input">
                     @error('portfolio_name')
@@ -32,7 +32,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Título de Portfólio </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Título do Produto </label>
                 <div class="col-sm-10">
                     <input name="portfolio_title" class="form-control" type="text" value="{{ $portfolio->portfolio_title }}" id="example-text-input">
 
@@ -57,7 +57,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
  
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Descrição do Portfólio </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Descrição do Produto </label>
                 <div class="col-sm-10">
       <textarea id="elm1" name="portfolio_description">
       {{ $portfolio->portfolio_description }}
@@ -67,7 +67,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
             <!-- end row -->
 
              <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem do Portfólio</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Imagem do Produto</label>
                 <div class="col-sm-10">
            <input name="portfolio_image" class="form-control" type="file" id="image">
                 </div>
