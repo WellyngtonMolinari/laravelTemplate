@@ -28,7 +28,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
               <div class="portfolio-info">
                   <h4>{{ $portfolio->portfolio_name }}</h4>
                   <p>{{ $portfolio->portfolio_title }}</p>
-                  <a href="{{ $portfolio->portfolio_image }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $portfolio->portfolio_name }}"><i class="bx bx-plus"></i></a>
+                  <a href="{{ $portfolio->portfolio_image }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $portfolio->portfolio_description }}"><i class="bx bx-plus"></i></a>
                   <a href="{{ route('portfolio.details', ['id' => $portfolio->id]) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               </div>
           </div>

@@ -10,6 +10,22 @@
         height: 50px; /* Adjust this value based on your fixed navbar height */
         margin: -20px 0 0; /* Negative margin to offset the added padding */
     }
+
+    /* Ensure that the YouTube video iframe occupies the full width of its container */
+    .documentation-video {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625 or 56.25%) */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .documentation-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 
 <div class="page-content">
@@ -38,6 +54,11 @@
                                 <li><a href="#atualizações">Atualizações e Mudanças</a></li>
                             </ul>
                         </div>
+
+                        <div class="documentation-video">
+                            <iframe src="https://www.youtube.com/embed/9ITILFazxuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <hr>
 
                         <div class="documentation-topic" id="sessao-principal">
                             <h5 class="mt-4">1. Sessão Principal</h5>

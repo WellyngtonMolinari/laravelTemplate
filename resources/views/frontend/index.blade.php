@@ -2,6 +2,7 @@
 @section('main')
 @php
 $homeslides = App\Models\HomeSlide::find(1);
+$allfooter = App\Models\Footer::find(1);
 @endphp
 @section('title')
 Home | {{ $homeslides->title }}
@@ -437,19 +438,19 @@ Home | {{ $homeslides->title }}
             <div class="address">
               <i class="bi bi-geo-alt"></i>
               <h4>Endereço:</h4>
-              <p>Rua Marechal Deodoro, Jacutinga - MG.</p>
+              <p>{{ $allfooter->adress }}</p>
             </div>
 
             <div class="email">
               <i class="bi bi-envelope"></i>
               <h4>Email:</h4>
-              <p>info@example.com</p>
+              <p>{{ $allfooter->email }}</p>
             </div>
 
             <div class="phone">
               <i class="bi bi-phone"></i>
               <h4>Celular:</h4>
-              <p>(35) 9 9999-9999</p>
+              <p>{{ $allfooter->number }}</p>
             </div>
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.9327314112293!2d-46.61101226153778!3d-22.28308561301624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c909e1cf07dd27%3A0x5fc7c1665ed0fce1!2sR.%20Mal.%20Deodoro%2C%20845%20-%20Centro%2C%20Jacutinga%20-%20MG%2C%2037590-000!5e0!3m2!1spt-BR!2sbr!4v1685643210944!5m2!1spt-BR!2sbr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>

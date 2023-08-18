@@ -41,13 +41,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--color-primary);
   border-radius: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-up-button-hover);
 }
 
 /* Add scrollbar styles for Firefox */
