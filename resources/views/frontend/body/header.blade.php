@@ -20,7 +20,7 @@ $allfooter = App\Models\Footer::find(1);
           {{-- <li><a class="nav-link scrollto" href="#services">Serviços</a></li> --}}
           <li><a class="nav-link {{ $route == 'home.portfolio' ? 'active' : '' }}" href="{{ route('home.portfolio') }}">Galeria</a></li>
           {{-- <li><a class="nav-link scrollto" href="#team">Equipe</a></li> --}}
-          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
+          <li><a class="nav-link {{ $route == 'contact.me' ? 'active' : '' }}" href="{{ route('contact.me') }}">Contato</a></li>
           <li><a class="nav-link {{ $route == 'home.blog' ? 'active' : '' }}" href="{{ route('home.blog') }}">Blog</a></li>
           
           <li><a class="getstarted scrollto" href="https://wa.me/{{ $allfooter->number }}?" target="_blank" rel="noopener noreferrer">

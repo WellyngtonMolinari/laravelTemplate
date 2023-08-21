@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 class ContactController extends Controller
 {
     public function Contact(){
-        return view('frontend.index');
+        return view('frontend.contact');
     } // end mehtod 
 
 
@@ -52,8 +52,6 @@ class ContactController extends Controller
         return redirect()->back()->with($notification);
 
     } // end mehtod 
-
-
 
 }
  
