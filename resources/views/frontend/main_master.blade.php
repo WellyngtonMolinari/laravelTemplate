@@ -17,6 +17,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  
     <!-- Vendor CSS Files -->
   <link href="{{ asset('frontend/assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -36,7 +37,7 @@
   <!-- Include Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
-
+  
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/496bbc51ac.js" crossorigin="anonymous"></script>
 

@@ -422,6 +422,10 @@ Home | {{ $homeslides->title }}
     </div>
   </section><!-- End Frequently Asked Questions Section --> --}}
 
+  <!-- ======= Blog Section ======= -->
+  @include('frontend.home_all.blogs')
+   <!-- End Blog Section -->
+
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">

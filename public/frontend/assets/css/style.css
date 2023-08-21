@@ -1973,7 +1973,6 @@ section {
 
 .blog .pagination {
   margin-top: 30px;
-  color: rgba(var(--color-default-rgb), 0.6);
 }
 
 .blog .pagination ul {
@@ -1989,23 +1988,33 @@ section {
 }
 
 .blog .pagination li a {
-  color: rgba(var(--color-default-rgb), 0.6);
   padding: 7px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.blog .pagination li.active,
-.blog .pagination li:hover {
+/* Use Bootstrap Icons classes for the icons */
+.blog .pagination li a::before,
+.blog .pagination li a::after {
+  font-family: "bootstrap-icons"; /* Make sure Bootstrap Icons font is available */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+}
+
+/* Customize active and hover states */
+.blog .pagination li.active a,
+.blog .pagination li:hover a {
   background: var(--color-primary);
   color: var(--color-inverse);
 }
 
-.blog .pagination li.active a,
-.blog .pagination li:hover a {
+.blog .pagination li.active a::before,
+.blog .pagination li.active a::after,
+.blog .pagination li:hover a::before,
+.blog .pagination li:hover a::after {
   color: var(--color-inverse);
 }
+
 
 /*--------------------------------------------------------------
 # Blog Details Page
@@ -2470,5 +2479,4 @@ section {
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
 
- 
  

@@ -158,6 +158,5 @@ public function DeleteBlog($id){
      } // End Method 
 
  
-
 }
  

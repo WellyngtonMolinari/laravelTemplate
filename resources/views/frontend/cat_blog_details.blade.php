@@ -63,7 +63,7 @@ Categorias Blog | {{ $homeslides->title }}
               </h2>
 
               <p class="post-description">{!! Str::limit($item->blog_description, 200) !!} </p>
-                  <li><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
+                  <li><i class="fa-solid fa-calendar-days"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
             </article>
             
           </div><!-- End post list item -->

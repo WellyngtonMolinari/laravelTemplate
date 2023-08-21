@@ -2,10 +2,13 @@
 @section('main')
 @php
 $homeslides = App\Models\HomeSlide::find(1);
+$allblogs = App\Models\Blog::orderBy('created_at', 'desc')->paginate(6);
 @endphp
 @section('title')
 Blog | {{ $homeslides->title }}
 @endsection
+<link href="{{ asset('frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+
 
 <main id="main">
 
@@ -52,14 +55,14 @@ Blog | {{ $homeslides->title }}
                 <img src="{{ asset($item->blog_image) }}" alt="" class="img-fluid">
               </div>
 
-              <p class="post-category">{{$item->blog_tags}}</p>
+              {{-- <p class="post-category">{{$item->blog_tags}}</p> --}}
 
               <h2 class="title">
                 <a href="{{ route('blog.details',$item->id) }}">{{$item->blog_title}}</a>
               </h2>
 
               <p class="post-description">{!! Str::limit($item->blog_description, 200) !!} </p>
-                  <li><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
+                  <li><i class="fa-solid fa-calendar-days"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
             </article>
             
           </div><!-- End post list item -->
@@ -72,9 +75,10 @@ Blog | {{ $homeslides->title }}
 
         <div class="pagination d-flex justify-content-center">
           <ul>
-            {{ $allblogs->links('vendor.pagination.custom') }}
+              {{ $allblogs->links('vendor.pagination.custom') }}
           </ul>
-        </div><!-- End pagination -->
+      </div><!-- End pagination -->
+      
 
       </div>
 

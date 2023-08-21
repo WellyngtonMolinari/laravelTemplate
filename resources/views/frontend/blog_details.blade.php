@@ -246,7 +246,7 @@ Detalhes Blog | {{ $homeslides->title }}
                         <img src="{{ asset($all->blog_image) }}" class="flex-shrink-0">
                         <div>
                             <h4><a href="{{ route('blog.details', $all->id) }}">{{ $all->blog_title }}</a></h4>
-                            <span class="post-date"><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($all->created_at)->diffForHumans() }} </span>
+                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i> {{ Carbon\Carbon::parse($all->created_at)->diffForHumans() }} </span>
                         </div>
                         </div><!-- End recent post item-->
                     @else
