@@ -47,9 +47,11 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
                 <div class="form-group mb-3">
                     <label for="category" class="form-label">Categoria</label>
                     <select name="category" class="form-select" id="example-select">
-                        <option selected disabled>Selecionar Categoria</option>
+                        <option disabled>Selecionar Categoria</option>
                         @foreach($portfoliocategory as $category)
-                            <option value="{{ $category->portfolio_category }}">{{ $category->portfolio_category }}</option>
+                            <option value="{{ $category->portfolio_category }}" @if($category->portfolio_category == $portfolio->category) selected @endif>
+                                {{ $category->portfolio_category }}
+                            </option>
                         @endforeach
                     </select>
                 </div>

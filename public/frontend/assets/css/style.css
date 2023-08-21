@@ -1022,14 +1022,19 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+/* Update the style for portfolio categories */
 .portfolio #portfolio-flters {
   list-style: none;
   margin-bottom: 20px;
+  text-align: center; /* Center the categories */
+  display: flex; /* Use flex display */
+  flex-wrap: wrap; /* Allow categories to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  padding: 0; /* Remove default padding */
 }
 
 .portfolio #portfolio-flters li {
   cursor: pointer;
-  display: inline-block;
   margin: 10px 5px;
   font-size: 15px;
   font-weight: 500;
@@ -1039,6 +1044,7 @@ section {
   padding: 8px 20px;
   border-radius: 50px;
   font-family: "Poppins", sans-serif;
+  min-width: 120px; /* Set a minimum width to prevent buttons from getting too small */
 }
 
 .portfolio #portfolio-flters li:hover,
@@ -1046,6 +1052,9 @@ section {
   background: #47b2e4;
   color: #fff;
 }
+
+
+
 
 .portfolio .portfolio-item {
   margin-bottom: 30px;
