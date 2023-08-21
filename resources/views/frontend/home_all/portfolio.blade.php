@@ -35,7 +35,7 @@ $portfoliocategory = App\Models\PortfolioCategory::latest()->get();
       @endforeach
   </div>
 
-  <div class="text-center mt-4">
+  <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
     <a href="{{ route('home.portfolio') }}" class="btn btn-primary">Ver Mais</a>
   </div>
 

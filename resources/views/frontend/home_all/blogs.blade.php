@@ -12,7 +12,7 @@ $homeblogs = App\Models\Blog::orderBy('created_at', 'desc')->take(3)->get();
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
 
-      <div class="row gy-4 posts-list">
+      <div class="row gy-4 posts-list" data-aos="fade-up" data-aos-delay="100">
           @foreach($homeblogs as $item)
 
         <div class="col-xl-4 col-lg-6">
@@ -41,7 +41,7 @@ $homeblogs = App\Models\Blog::orderBy('created_at', 'desc')->take(3)->get();
       </div><!-- End blog posts list -->
  
       <!-- Button to navigate to full blogs section -->
-      <div class="text-center mt-4">
+      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
         <a href="{{ route('home.blog') }}" class="btn btn-primary">Ver Todos os Posts</a>
     </div>
 
