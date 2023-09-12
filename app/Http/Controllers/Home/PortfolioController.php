@@ -39,15 +39,16 @@ class PortfolioController extends Controller
     
         // Store multiple images
         $multiImages = $request->file('multi_img');
-        foreach ($multiImages as $multiImage) {
-            $multiImageName = $this->uploadAndResizeImage($multiImage, 'upload/multi/');
-            MultiImage::create([
-                'portfolio_id' => $portfolio->id,
-                'multi_image' => $multiImageName,
-                'created_at' => now(),
-            ]);
+        if ($multiImages && is_array($multiImages)) {
+            foreach ($multiImages as $multiImage) {
+                $multiImageName = $this->uploadAndResizeImage($multiImage, 'upload/multi/');
+                MultiImage::create([
+                    'portfolio_id' => $portfolio->id,
+                    'multi_image' => $multiImageName,
+                    'created_at' => now(),
+                ]);
+            }
         }
-    
         $notification = [
             'message' => 'Adicionado com Sucesso!',
             'alert-type' => 'success'
